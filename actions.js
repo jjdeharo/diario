@@ -77,6 +77,15 @@ export const actionHandlers = {
             saveState();
         }
     },
+    'go-to-student': (id, element) => {
+        const studentId = element.value;
+        if (studentId) {
+            const studentAnnotationEl = document.getElementById(`student-annotation-${studentId}`);
+            if (studentAnnotationEl) {
+                studentAnnotationEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    },
     'export-student-docx': () => {
         const student = state.students.find(s => s.id === state.selectedStudentId);
         if (!student) return;
