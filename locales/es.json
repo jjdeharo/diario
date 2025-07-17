@@ -95,5 +95,14 @@
   "delete_all_data_confirm_text": "Esta acción es irreversible y borrará todos los datos de la aplicación. ¿Estás seguro?",
   "delete_all_data_success_alert": "Todos los datos han sido borrados.",
   "modal_cancel": "Cancelar",
-  "modal_confirm": "Confirmar"
+  "modal_confirm": "Confirmar",
+  "footer_made_by": "Aplicación hecha por",
+  "footer_license": "Licencia Creative Commons BY-SA",
+  "footer_privacy": "Política de Privacidad",
+  "privacy_title": "Política de Privacidad",
+  "privacy_p1": "Tu privacidad es fundamental. Esta aplicación está diseñada para funcionar de forma completamente local en tu navegador.",
+  "privacy_p2": "<strong>Almacenamiento de datos:</strong> Toda la información que introduces (horarios, clases, nombres de estudiantes, anotaciones, etc.) se guarda exclusivamente en el almacenamiento local (LocalStorage) de tu navegador web, en tu propio ordenador. Ningún dato se envía a ningún servidor externo.",
+  "privacy_p3": "<strong>Copias de seguridad:</strong> Cuando usas la función \"Guardar\", se genera un fichero <code>.json</code> que se descarga en tu ordenador. Este fichero contiene todos tus datos y eres el único responsable de su custodia. Al usar \"Abrir\", los datos de ese fichero reemplazan los que están guardados en el navegador.",
+  "privacy_p4": "<strong>Datos de menores:</strong> La aplicación puede contener datos de menores (nombres y anotaciones). Es tu responsabilidad como usuario/a cumplir con la normativa de protección de datos vigente en tu país o región respecto a la gestión de esta información.",
+  "privacy_p5": "En resumen: tus datos son tuyos, se quedan en tu dispositivo y nunca salen de él a menos que tú decidas exportarlos."
 }
