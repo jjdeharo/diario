@@ -462,7 +462,7 @@ export const actionHandlers = {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `cuaderno-profesor-backup-${new Date().toISOString().split('T')[0]}.json`;
+        a.download = `diario-clase-backup-${new Date().toISOString().split('T')[0]}.json`;
         a.click();
         URL.revokeObjectURL(url);
     },
