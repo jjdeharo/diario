@@ -354,7 +354,7 @@ export function renderSettingsView() {
 
         if (state.editingActivityId === act.id) {
             return `
-            <div class="p-4 border rounded-md bg-white dark:bg-gray-700 border-blue-500">
+            <div id="edit-activity-form-${act.id}" class="p-4 border rounded-md bg-white dark:bg-gray-700 border-blue-500">
                 <div class="flex justify-between items-center">
                     <input type="color" data-action="change-activity-color" data-id="${act.id}" value="${act.color}" class="p-0 border-none rounded-full cursor-pointer w-7 h-7">
                     <input type="text" id="edit-activity-name-${act.id}" value="${act.name}" class="flex-grow p-1 mx-2 border-0 bg-transparent rounded-md focus:ring-0 font-semibold">
