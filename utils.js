@@ -113,3 +113,23 @@ export function showModal(title, content, onConfirm) {
     document.getElementById('modal-cancel').onclick = close;
     modalCloseBtn.onclick = close;
 }
+
+// --- Nueva función para modales de información ---
+export function showInfoModal(title, htmlContent) {
+    const modalContainer = document.getElementById('modal-container');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    modalTitle.textContent = title;
+    modalBody.innerHTML = `${htmlContent}
+        <div class="flex justify-end gap-4 mt-6">
+            <button id="modal-info-close" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">${t('modal_cancel')}</button>
+        </div>`;
+    
+    const close = () => modalContainer.classList.add('hidden');
+    modalContainer.classList.remove('hidden');
+    
+    document.getElementById('modal-info-close').onclick = close;
+    modalCloseBtn.onclick = close;
+}
