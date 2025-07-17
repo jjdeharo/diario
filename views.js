@@ -4,6 +4,9 @@ import { state } from './state.js';
 import { darkenColor, getWeekStartDate, getWeekDateRange, formatDate, isSameDate, findNextSession, findPreviousSession, DAY_KEYS } from './utils.js';
 import { t } from './i18n.js'; // Importamos la función de traducción
 
+// Función de ayuda para ordenar alumnos por nombre
+const sortStudentsByName = (studentA, studentB) => studentA.name.localeCompare(studentB.name);
+
 function renderMobileHeaderActions(actions) {
     const container = document.getElementById('mobile-header-actions');
     if (!container) return;
@@ -186,7 +189,10 @@ export function renderClassesView() {
     }
 
     const classesHtml = classes.map(c => {
-        const studentsOfClass = state.students.filter(s => c.studentIds?.includes(s.id));
+        const studentsOfClass = state.students
+            .filter(s => c.studentIds?.includes(s.id))
+            .sort(sortStudentsByName); // Ordenar alumnos
+        
         const studentsHtml = studentsOfClass.map(s => `
             <div class="flex justify-between items-center p-2 bg-gray-100 dark:bg-gray-700 rounded-md">
                 <button data-action="select-student" data-student-id="${s.id}" class="text-left font-medium text-blue-600 dark:text-blue-400 hover:underline flex-grow">${s.name}</button>
@@ -319,7 +325,10 @@ export function renderSettingsView() {
      const activitiesHtml = state.activities.map(act => {
         let studentsInClassHtml = '';
         if (act.type === 'class') {
-            const enrolledStudents = state.students.filter(s => act.studentIds?.includes(s.id));
+            const enrolledStudents = state.students
+                .filter(s => act.studentIds?.includes(s.id))
+                .sort(sortStudentsByName);
+            
             const enrolledStudentsHtml = enrolledStudents.map(student => `
                 <div class="flex items-center justify-between bg-gray-100 dark:bg-gray-700 p-2 rounded-md text-sm">
                     <button data-action="select-student" data-student-id="${student.id}" class="text-left font-medium text-blue-600 dark:text-blue-400 hover:underline flex-grow">${student.name}</button>
@@ -327,7 +336,10 @@ export function renderSettingsView() {
                 </div>
             `).join('');
 
-            const availableStudents = state.students.filter(s => !act.studentIds?.includes(s.id));
+            const availableStudents = state.students
+                .filter(s => !act.studentIds?.includes(s.id))
+                .sort(sortStudentsByName);
+                
             const availableStudentsOptions = availableStudents.map(student => `<option value="${student.id}">${student.name}</option>`).join('');
 
             studentsInClassHtml = `
@@ -538,7 +550,9 @@ export function renderActivityDetailView() {
     const { name, day, time, date, id: activityId } = state.selectedActivity;
     const entryId = `${activityId}_${date}`;
     const entry = state.classEntries[entryId] || { planned: '', completed: '', annotations: {} };
-    const studentsInClass = state.students.filter(s => state.selectedActivity.studentIds?.includes(s.id));
+    const studentsInClass = state.students
+        .filter(s => state.selectedActivity.studentIds?.includes(s.id))
+        .sort(sortStudentsByName);
 
     const annotationsHtml = studentsInClass.length > 0 ? studentsInClass.map(student => `
         <div id="student-annotation-${student.id}" key="${student.id}">
