@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuaderno del Profesor (Local)</title>
+    
+    <script>
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark' ||
+          (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class'
+    // aquí puedes añadir más opciones
+  };
+</script>
+
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/docx@7.3.0/build/index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200">
+
+    <div class="flex h-screen">
+        <nav id="sidebar" class="absolute z-20 sm:relative flex flex-col justify-between w-56 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-3 transform -translate-x-full sm:translate-x-0 transition-transform duration-300 ease-in-out no-print">
+            <div>
+                <div class="flex items-center justify-between gap-3 mb-8 px-2">
+                    <div class="flex items-center gap-3">
+                        <div data-lucide="book-user" class="text-blue-600 w-7 h-7"></div>
+                        <h1 id="app-title" class="text-xl font-bold text-gray-800 dark:text-gray-200" data-i18n-key="app_title">Cuaderno del Profesor</h1>
+                    </div>
+                    <button id="close-sidebar-btn" class="sm:hidden text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <button data-view="schedule" class="nav-button flex items-center justify-start gap-3 w-full p-3 text-sm font-medium rounded-md transition-colors bg-blue-600 text-white">
+                        <div data-lucide="calendar-days" class="w-5 h-5"></div>
+                        <span data-i18n-key="nav_schedule">Horario</span>
+                    </button>
+                    <button data-view="classes" class="nav-button flex items-center justify-start gap-3 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+                        <div data-lucide="users" class="w-5 h-5"></div>
+                        <span data-i18n-key="nav_classes">Clases</span>
+                    </button>
+                    <button data-view="settings" class="nav-button flex items-center justify-start gap-3 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+                        <div data-lucide="settings" class="w-5 h-5"></div>
+                        <span data-i18n-key="nav_settings">Configuración</span>
+                    </button>
+                     <a href="manual.html" class="flex items-center justify-start gap-3 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white">
+                        <div data-lucide="help-circle" class="w-5 h-5"></div>
+                        <span data-i18n-key="nav_manual">Manual de uso</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pb-2 space-y-4">
+                <div class="px-2">
+                    <div class="flex items-center justify-around bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                         <button data-theme="light" class="theme-switcher p-2 rounded-md" title="Modo claro">
+                            <i data-lucide="sun" class="w-5 h-5"></i>
+                        </button>
+                        <button data-theme="dark" class="theme-switcher p-2 rounded-md" title="Modo oscuro">
+                            <i data-lucide="moon" class="w-5 h-5"></i>
+                        </button>
+                        <button data-theme="system" class="theme-switcher p-2 rounded-md" title="Modo del sistema">
+                            <i data-lucide="laptop" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-start gap-2 px-2">
+                    <button data-lang="es" class="lang-switcher border-2 border-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-blue-600">ES</button>
+                    <button data-lang="ca" class="lang-switcher border-2 border-transparent rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-gray-500 hover:border-gray-400">CA</button>
+                    <button data-lang="en" class="lang-switcher border-2 border-transparent rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-gray-500 hover:border-gray-400">EN</button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="flex-1 flex flex-col">
+             <header class="sm:hidden flex justify-between items-center p-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 no-print">
+                 <button id="open-sidebar-btn" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <h2 id="mobile-header-title" class="text-lg font-bold"></h2>
+                <div id="mobile-header-actions" class="relative"></div>
+            </header>
+            <main id="main-content" class="flex-1 overflow-y-auto pb-16">
+                </main>
+             <footer class="fixed bottom-0 left-0 sm:left-56 right-0 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-2 text-center text-xs text-gray-500 dark:text-gray-400 no-print">
+                Aplicación hecha por <a href="https://bilateria.org" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Juan José de Haro</a> - <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Licencia Creative Commons BY-SA</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="save-indicator" class="fixed bottom-12 sm:bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 z-50 no-print">
+        <div class="flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5"></i> Guardado
+        </div>
+    </div>
+
+
+    <div id="modal-container" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4 hidden no-print">
+        <div id="modal-content" class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-md max-h-full overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b dark:border-gray-700">
+                <h3 id="modal-title" class="text-xl font-semibold text-gray-800 dark:text-gray-200"></h3>
+                <button id="modal-close-btn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="modal-body" class="p-6"></div>
+        </div>
+    </div>
+    
+    <div id="sidebar-overlay" class="sm:hidden fixed inset-0 bg-black bg-opacity-50 z-10 hidden"></div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

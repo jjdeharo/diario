@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- El título se establecerá dinámicamente -->
+    <title>Manual de Uso - Cuaderno del Profesor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .prose h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose p, .prose ul, .prose ol, .prose li {
+            color: #374151;
+        }
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+        .prose strong {
+            color: #1f2937;
+        }
+        .prose a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        .prose .icon {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            vertical-align: text-bottom;
+            margin-right: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+         <!-- Sidebar de Navegación -->
+         <nav class="flex flex-col justify-between w-16 sm:w-56 bg-white border-r border-gray-200 p-3 h-screen sticky top-0">
+            <div>
+                <div class="flex items-center gap-3 mb-8 px-2">
+                    <div data-lucide="book-user" class="text-blue-600 w-7 h-7"></div>
+                    <h1 class="text-xl font-bold text-gray-800 hidden sm:inline" data-i18n-key="app_title">Cuaderno del Profesor</h1>
+                </div>
+                <div class="space-y-2">
+                     <a href="index.html" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="home" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_back_to_app">Volver a la App</span>
+                    </a>
+                    <a href="#inicio" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="play-circle" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_nav_getting_started">Primeros Pasos</span>
+                    </a>
+                    <a href="#configuracion" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="settings" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_nav_settings">Configuración</span>
+                    </a>
+                    <a href="#horario" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="calendar-days" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_nav_schedule">Uso del Horario</span>
+                    </a>
+                     <a href="#alumnado" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="users" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_nav_students">Gestión de Alumnado</span>
+                    </a>
+                     <a href="#datos" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                        <div data-lucide="database" class="w-5 h-5"></div>
+                        <span class="hidden sm:inline" data-i18n-key="manual_nav_data">Gestión de Datos</span>
+                    </a>
+                </div>
+            </div>
+             <!-- Selector de Idioma -->
+            <div class="pb-2">
+                <div class="flex justify-center sm:justify-start gap-2 px-2">
+                    <button data-lang="es" class="lang-switcher border-2 border-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-blue-600">ES</button>
+                    <button data-lang="ca" class="lang-switcher border-2 border-transparent rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-gray-500 hover:border-gray-400">CA</button>
+                    <button data-lang="en" class="lang-switcher border-2 border-transparent rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-gray-500 hover:border-gray-400">EN</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 p-6 sm:p-8 md:p-10">
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md prose">
+                <h1 class="text-3xl font-bold text-gray-900" data-i18n-key="manual_main_title">Manual de Uso</h1>
+                <p class="text-lg text-gray-600" data-i18n-key="manual_welcome">Bienvenido al Cuaderno del Profesor. Esta guía te ayudará a configurar y utilizar todas las funcionalidades de la aplicación.</p>
+
+                <section id="inicio">
+                    <h2 data-i18n-key="manual_getting_started_title"><i data-lucide="play-circle" class="icon"></i>Primeros Pasos: Configuración Inicial</h2>
+                    <p data-i18n-key="manual_getting_started_p1">Para empezar a usar la aplicación, lo primero es configurar tus clases, horarios y alumnado. Todo esto se gestiona desde la pestaña de <strong data-i18n-key="manual_config_strong">Configuración</strong>.</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li data-i18n-key="manual_getting_started_li1"><strong>Define las Fechas del Curso:</strong> Establece la fecha de inicio y fin del curso académico. Esto ayuda a que el horario muestre las clases solo dentro de ese período.</li>
+                        <li data-i18n-key="manual_getting_started_li2"><strong>Crea las Franjas Horarias:</strong> Añade las franjas horarias de tu jornada (Ej: "08:00-09:00", "09:00-10:00"). Puedes usar el generador automático para crearlas rápidamente.</li>
+                        <li data-i18n-key="manual_getting_started_li3"><strong>Crea tus Actividades/Clases:</strong> Añade las asignaturas o grupos que impartes. Marca la opción "Clase con alumnado" si quieres asignarle estudiantes. Las "Actividades generales" son para reuniones, guardias, etc.</li>
+                        <li data-i18n-key="manual_getting_started_li4"><strong>Configura tu Horario Base:</strong> Usa la tabla del horario semanal para asignar cada actividad a su día y franja horaria correspondiente.</li>
+                        <li data-i18n-key="manual_getting_started_li5"><strong>Añade tu Alumnado:</strong> Ve a la pestaña <strong data-i18n-key="manual_classes_strong">Clases</strong> o a la sección de "Gestión de Actividades" en Configuración para añadir estudiantes a cada clase. Puedes hacerlo uno a uno o usar la herramienta de "Importación Rápida".</li>
+                    </ol>
+                </section>
+
+                <section id="configuracion">
+                    <h2 data-i18n-key="manual_settings_details_title"><i data-lucide="settings" class="icon"></i>Detalles de la Configuración</h2>
+                    <h3 data-i18n-key="manual_settings_activities_title">Gestión de Actividades</h3>
+                    <ul>
+                        <li data-i18n-key="manual_settings_activities_li1"><strong>Crear:</strong> Introduce un nombre, elige un tipo (clase o general) y pulsa "Añadir". Se le asignará un color automáticamente, pero puedes cambiarlo haciendo clic en el círculo de color.</li>
+                        <li data-i18n-key="manual_settings_activities_li2"><strong>Editar:</strong> Haz clic en el nombre de una actividad para editarla. Podrás cambiar su nombre y las fechas de inicio/fin específicas para esa clase.</li>
+                        <li data-i18n-key="manual_settings_activities_li3"><strong>Asignar Alumnado:</strong> Dentro de una actividad de tipo "clase", puedes ver el listado de alumnos y añadir nuevos desde la lista de estudiantes existentes.</li>
+                    </ul>
+                    <h3 data-i18n-key="manual_settings_generator_title">Generador Automático de Horario</h3>
+                    <p data-i18n-key="manual_settings_generator_p1">Esta herramienta te permite crear las franjas horarias de forma masiva. Simplemente define la hora de inicio y fin de la jornada, la duración de las clases y de los descansos.</p>
+                    <h3 data-i18n-key="manual_settings_overrides_title">Sustituciones de Horario</h3>
+                    <p data-i18n-key="manual_settings_overrides_p1">Si durante un período de tiempo una clase es reemplazada por otra (por ejemplo, por un proyecto especial o una salida), puedes crear una sustitución. Esta tendrá prioridad sobre el horario base durante las fechas que especifiques.</p>
+                </section>
+
+                <section id="horario">
+                    <h2 data-i18n-key="manual_schedule_usage_title"><i data-lucide="calendar-days" class="icon"></i>Uso del Horario</h2>
+                    <p data-i18n-key="manual_schedule_usage_p1">La vista de <strong>Horario</strong> es tu centro de operaciones diario.</p>
+                    <ul>
+                        <li data-i18n-key="manual_schedule_usage_li1"><strong>Navegación:</strong> Usa las flechas para moverte entre semanas y el botón "Hoy" para volver a la semana actual.</li>
+                        <li data-i18n-key="manual_schedule_usage_li2"><strong>Ver una Sesión:</strong> Haz clic en cualquier bloque de clase en el horario para abrir la vista de detalle de esa sesión.</li>
+                        <li data-i18n-key="manual_schedule_usage_li3"><strong>Registro de Sesión:</strong> En la vista de detalle, puedes:
+                            <ul>
+                                <li data-i18n-key="manual_schedule_usage_li3_1">Anotar la <strong>planificación</strong> para esa clase.</li>
+                                <li data-i18n-key="manual_schedule_usage_li3_2">Escribir un <strong>resumen</strong> de lo que se ha hecho finalmente.</li>
+                                <li data-i18n-key="manual_schedule_usage_li3_3">Añadir <strong>anotaciones individuales</strong> para cada estudiante (dudas, comportamiento, etc.).</li>
+                            </ul>
+                        </li>
+                        <li data-i18n-key="manual_schedule_usage_li4"><strong>Navegar entre sesiones:</strong> Dentro de la vista de detalle de una clase, puedes usar los botones "Sesión anterior" y "Siguiente sesión" para moverte cronológicamente por todas las clases de esa misma actividad.</li>
+                        <li data-i18n-key="manual_schedule_usage_li5"><strong>Imprimir:</strong> Puedes imprimir una versión simplificada del horario semanal.</li>
+                    </ul>
+                </section>
+
+                <section id="alumnado">
+                    <h2 data-i18n-key="manual_students_title"><i data-lucide="users" class="icon"></i>Gestión de Alumnado</h2>
+                    <h3 data-i18n-key="manual_students_classes_tab_title">Pestaña de Clases</h3>
+                    <p data-i18n-key="manual_students_classes_tab_p1">Aquí puedes ver todas tus clases y el listado de estudiantes en cada una. Es un buen lugar para añadir o quitar estudiantes de una clase de forma rápida.</p>
+                    <h3 data-i18n-key="manual_students_file_title">Ficha del Estudiante</h3>
+                    <ul>
+                        <li data-i18n-key="manual_students_file_li1">Para acceder a la ficha, haz clic en el nombre de un estudiante desde la vista de <strong>Clases</strong> o desde la vista de detalle de una sesión.</li>
+                        <li data-i18n-key="manual_students_file_li2">En la ficha puedes:
+                            <ul>
+                                <li data-i18n-key="manual_students_file_li2_1">Editar el nombre del estudiante.</li>
+                                <li data-i18n-key="manual_students_file_li2_2">Ver en qué clases está inscrito.</li>
+                                <li data-i18n-key="manual_students_file_li2_3">Añadir <strong>anotaciones generales</strong> sobre el estudiante que no son de una sesión concreta.</li>
+                                <li data-i18n-key="manual_students_file_li2_4">Ver y editar el <strong>historial completo de anotaciones</strong> de ese estudiante en todas las sesiones.</li>
+                                <li data-i18n-key="manual_students_file_li2_5">Imprimir una ficha completa con toda su información.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                     <h3 data-i18n-key="manual_students_import_title">Importación Rápida</h3>
+                    <p data-i18n-key="manual_students_import_p1">En <strong>Configuración</strong>, puedes usar la herramienta de importación para añadir muchos estudiantes a la vez. Simplemente selecciona la clase de destino y pega la lista de nombres (uno por línea) en el área de texto.</p>
+                </section>
+
+                <section id="datos">
+                    <h2 data-i18n-key="manual_data_title"><i data-lucide="database" class="icon"></i>Gestión de Datos</h2>
+                    <p data-i18n-key="manual_data_p1">Toda la información se guarda localmente en tu navegador. Esto significa que los datos son privados y solo accesibles desde el dispositivo y navegador donde los creaste.</p>
+                    <h3 data-i18n-key="manual_data_backup_title_new">Guardar y Abrir (Copia de Seguridad)</h3>
+                    <p data-i18n-key="manual_data_backup_p1">Los botones para gestionar tus datos ahora se encuentran en la vista principal de <strong>Horario</strong>, en la esquina superior derecha.</p>
+                    <ul>
+                        <li data-i18n-key="manual_data_backup_li1_new"><strong>Guardar:</strong> Pulsa este botón para descargar un archivo <code>.json</code> con todos tus datos (horario, clases, alumnos, anotaciones, etc.). Guarda este archivo en un lugar seguro como copia de seguridad.</li>
+                        <li data-i18n-key="manual_data_backup_li2_new"><strong>Abrir:</strong> Si cambias de ordenador o quieres restaurar una copia, usa este botón y selecciona el archivo <code>.json</code> que guardaste. <strong>¡Atención!</strong> Esto reemplazará todos los datos actuales de la aplicación.</li>
+                    </ul>
+                    <h3 data-i18n-key="manual_data_delete_title">Borrar todos los datos</h3>
+                    <p data-i18n-key="manual_data_delete_p1_new">En la "Zona de Peligro" de la página de <strong>Configuración</strong>, puedes borrar permanentemente toda la información de la aplicación. Esta acción no se puede deshacer, así que úsala con precaución.</p>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="manual_i18n.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

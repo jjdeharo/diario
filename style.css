@@ -1,0 +1,154 @@
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+.animate-fade-in { 
+    animation: fadeIn 0.5s ease-in-out; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+/* Evitar que el número en input[type=number] tenga flechas */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield; 
+}
+
+#save-indicator.show {
+    opacity: 1;
+}
+
+/* Estilos de impresión */
+@media print {
+    body {
+        font-family: 'Times New Roman', serif;
+    }
+    body * {
+        visibility: hidden;
+    }
+    .printable-area, .printable-area * {
+        visibility: visible;
+        color: #000 !important; /* Aseguramos texto negro en impresión */
+    }
+    .printable-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 40px;
+        font-size: 12pt;
+    }
+    .no-print {
+        display: none !important;
+    }
+
+    /* --- Estilos para la Ficha del Alumnado --- */
+    #student-sheet-content {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    #student-sheet-content h2.print\:block {
+        display: block !important;
+        text-align: center;
+        font-size: 22pt;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 10px;
+    }
+    #student-sheet-content h3 {
+        font-size: 16pt;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
+    #student-sheet-content label {
+        font-weight: bold;
+        font-size: 14pt;
+        margin-bottom: 8px;
+        display: block;
+    }
+    #student-sheet-content input[type="text"],
+    #student-sheet-content textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: 100%;
+        font-family: 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        resize: none;
+        height: auto;
+    }
+    #student-sheet-content textarea {
+        display: block;
+        white-space: pre-wrap; /* Respeta los saltos de línea */
+        padding-top: 5px !important;
+    }
+    #student-sheet-content ul {
+        list-style-position: inside;
+        padding-left: 0;
+    }
+    #student-sheet-content li {
+        background: transparent !important;
+        padding: 4px 0 !important;
+        border-bottom: 1px dotted #ccc;
+    }
+    #student-sheet-content li:last-child {
+        border-bottom: none;
+    }
+    #student-sheet-content .p-3.bg-gray-50 {
+        background: transparent !important;
+        padding: 15px 0 !important;
+        border-top: 1px solid #eee;
+    }
+    #student-sheet-content .p-3.bg-gray-50:first-child {
+        border-top: none;
+    }
+    #student-sheet-content .flex.items-center.gap-2.mb-2 {
+        font-weight: bold;
+    }
+    #student-sheet-content .w-3.h-3.rounded-full, #student-sheet-content .w-4.h-4.rounded-full {
+        display: none; /* Oculta los puntos de color */
+    }
+
+    /* --- Estilos Generales de Impresión (para Horario) --- */
+    #printable-schedule table {
+        width: 100%;
+        table-layout: fixed;
+        font-size: 9pt;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    #printable-schedule th, #printable-schedule td {
+        border: 1px solid #ccc;
+        padding: 6px 4px;
+        word-wrap: break-word;
+    }
+    #printable-schedule button, #printable-schedule div[style*="background-color"] {
+        border: 1px solid #ccc !important;
+        background-color: #f0f0f0 !important; /* Fondo claro para impresión */
+        color: #000 !important; /* Texto negro para impresión */
+        font-size: 8pt !important;
+        padding: 2px !important;
+        min-height: 0 !important;
+        white-space: normal !important;
+        line-height: 1.2 !important;
+        height: 100% !important;
+    }
+}
