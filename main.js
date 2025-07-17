@@ -75,6 +75,12 @@ function handleAction(action, element, event) {
 
     if (reRenderActions.includes(action)) {
         render();
+        if (action === 'edit-activity') {
+            const targetElement = document.getElementById(`edit-activity-form-${id}`);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
     }
 }
 
