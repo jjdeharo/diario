@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- El título se establecerá dinámicamente -->
-    <title>Manual de Uso - Cuaderno del Profesor</title>
+    <title>Manual de Uso - Diario de clase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,12 +52,11 @@
 </head>
 <body class="bg-gray-100">
     <div class="flex">
-         <!-- Sidebar de Navegación -->
          <nav class="flex flex-col justify-between w-16 sm:w-56 bg-white border-r border-gray-200 p-3 h-screen sticky top-0">
             <div>
                 <div class="flex items-center gap-3 mb-8 px-2">
                     <div data-lucide="book-user" class="text-blue-600 w-7 h-7"></div>
-                    <h1 class="text-xl font-bold text-gray-800 hidden sm:inline" data-i18n-key="app_title">Cuaderno del Profesor</h1>
+                    <h1 class="text-xl font-bold text-gray-800 hidden sm:inline" data-i18n-key="app_title">Diario de clase</h1>
                 </div>
                 <div class="space-y-2">
                      <a href="index.html" class="nav-button flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 w-full p-3 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-200 hover:text-gray-900">
@@ -87,8 +85,7 @@
                     </a>
                 </div>
             </div>
-             <!-- Selector de Idioma -->
-            <div class="pb-2">
+             <div class="pb-2">
                 <div class="flex justify-center sm:justify-start gap-2 px-2">
                     <button data-lang="es" class="lang-switcher border-2 border-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-blue-600">ES</button>
                     <button data-lang="ca" class="lang-switcher border-2 border-transparent rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold text-gray-500 hover:border-gray-400">CA</button>
@@ -97,11 +94,10 @@
             </div>
         </nav>
 
-        <!-- Contenido Principal -->
         <main class="flex-1 p-6 sm:p-8 md:p-10">
             <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md prose">
                 <h1 class="text-3xl font-bold text-gray-900" data-i18n-key="manual_main_title">Manual de Uso</h1>
-                <p class="text-lg text-gray-600" data-i18n-key="manual_welcome">Bienvenido al Cuaderno del Profesor. Esta guía te ayudará a configurar y utilizar todas las funcionalidades de la aplicación.</p>
+                <p class="text-lg text-gray-600" data-i18n-key="manual_welcome">Bienvenido al Diario de clase. Esta guía te ayudará a configurar y utilizar todas las funcionalidades de la aplicación.</p>
 
                 <section id="inicio">
                     <h2 data-i18n-key="manual_getting_started_title"><i data-lucide="play-circle" class="icon"></i>Primeros Pasos: Configuración Inicial</h2>
