@@ -95,5 +95,14 @@
   "delete_all_data_confirm_text": "This action is irreversible and will delete all application data. Are you sure?",
   "delete_all_data_success_alert": "All data has been deleted.",
   "modal_cancel": "Cancel",
-  "modal_confirm": "Confirm"
+  "modal_confirm": "Confirm",
+  "footer_made_by": "Application made by",
+  "footer_license": "Creative Commons BY-SA License",
+  "footer_privacy": "Privacy Policy",
+  "privacy_title": "Privacy Policy",
+  "privacy_p1": "Your privacy is paramount. This application is designed to run entirely locally in your browser.",
+  "privacy_p2": "<strong>Data Storage:</strong> All the information you enter (schedules, classes, student names, annotations, etc.) is saved exclusively in your web browser's local storage (LocalStorage), on your own computer. No data is sent to any external server.",
+  "privacy_p3": "<strong>Backups:</strong> When you use the \"Save\" feature, a <code>.json</code> file is generated and downloaded to your computer. This file contains all your data, and you are solely responsible for its safekeeping. When using \"Open\", the data from that file will replace the data currently stored in the browser.",
+  "privacy_p4": "<strong>Data of Minors:</strong> The application may contain data of minors (names and annotations). It is your responsibility as a user to comply with the data protection regulations in force in your country or region regarding the management of this information.",
+  "privacy_p5": "In short: your data is yours, it stays on your device, and it never leaves unless you decide to export it."
 }
