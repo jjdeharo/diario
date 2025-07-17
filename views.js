@@ -541,7 +541,7 @@ export function renderActivityDetailView() {
     const studentsInClass = state.students.filter(s => state.selectedActivity.studentIds?.includes(s.id));
 
     const annotationsHtml = studentsInClass.length > 0 ? studentsInClass.map(student => `
-        <div key="${student.id}">
+        <div id="student-annotation-${student.id}" key="${student.id}">
             <button data-action="select-student" data-student-id="${student.id}" class="text-left font-medium text-blue-600 dark:text-blue-400 hover:underline w-full">${student.name}</button>
             <textarea data-action="annotation-change" data-student-id="${student.id}" placeholder="${t('student_notes_placeholder')}" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-md mt-1 h-24">${entry.annotations?.[student.id] || ''}</textarea>
         </div>
@@ -575,6 +575,13 @@ export function renderActivityDetailView() {
                 </div>
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-3">${t('student_annotations_title')}</h3>
+                    <div class="mb-4">
+                        <label for="student-quick-nav" class="sr-only">${t('select_student')}</label>
+                        <select id="student-quick-nav" data-action="go-to-student" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
+                            <option value="">-- ${t('select_student')} --</option>
+                            ${studentsInClass.map(student => `<option value="${student.id}">${student.name}</option>`).join('')}
+                        </select>
+                    </div>
                     <div class="space-y-4 max-h-96 overflow-y-auto pr-2">${annotationsHtml}</div>
                 </div>
             </div>
