@@ -1,7 +1,8 @@
 // actions.js: Define toda la lógica de las acciones del usuario.
 
 import { state, saveState, getRandomPastelColor } from './state.js';
-import { showModal } from './utils.js';
+// Se importa 'showInfoModal' además de 'showModal'
+import { showModal, showInfoModal } from './utils.js'; 
 import { t } from './i18n.js'; // Importamos la función de traducción
 
 export const actionHandlers = {
@@ -508,4 +509,19 @@ export const actionHandlers = {
             window.location.reload();
         });
     },
+    // --- Privacy Policy Action (New) ---
+    'show-privacy-policy': () => {
+        const title = t('privacy_title');
+        // Usamos las claves de traducción para generar el contenido del modal
+        const content = `
+            <div class="prose prose-sm dark:prose-invert max-w-none text-left text-gray-700 dark:text-gray-300">
+                <p>${t('privacy_p1')}</p>
+                <p>${t('privacy_p2')}</p>
+                <p>${t('privacy_p3')}</p>
+                <p>${t('privacy_p4')}</p>
+                <p>${t('privacy_p5')}</p>
+            </div>
+        `;
+        showInfoModal(title, content);
+    }
 };
