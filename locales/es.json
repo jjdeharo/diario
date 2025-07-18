@@ -152,7 +152,7 @@
   "manual_settings_data_title": "Pestaña Datos",
   "manual_settings_data_p1": "Esta sección contiene opciones delicadas para la gestión de todos tus datos.",
   "manual_data_delete_title": "Zona de Peligro",
-  "manual_data_delete_p1_new": "En la \"Zona de Peligro\" de la página de <strong>Configuración</strong>, puedes borrar permanentemente toda la información de la aplicación. Esta acción no se puede deshacer, así que úsala con precaución.<br><br>El botón <strong>Importar solo horario</strong> permite recuperar únicamente el horario de datos que han sido guardados previamente. Todo el resto de datos (asignaturas, alumnos y anotaciones) se perderán."
+  "manual_data_delete_p1_new": "En la \"Zona de Peligro\" de la página de <strong>Configuración</strong>, puedes borrar permanentemente toda la información de la aplicación. Esta acción no se puede deshacer, así que úsala con precaución.<br><br>El botón <strong>Importar solo horario</strong> permite recuperar únicamente el horario de datos que han sido guardados previamente. Todo el resto de datos (asignaturas, alumnos y anotaciones) se perderán.",
   "manual_schedule_usage_title": "Uso del Horario",
   "manual_schedule_usage_p1": "La vista de <strong>Horario</strong> es tu centro de operaciones diario.",
   "manual_schedule_usage_li1": "<strong>Navegación:</strong> Usa las flechas para moverte entre semanas, el botón \"Hoy\" para volver a la semana actual, o haz clic en la fecha para desplegar un selector y saltar a cualquier semana del curso.",
