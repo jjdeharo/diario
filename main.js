@@ -117,6 +117,12 @@ function attachEventListeners() {
         mobileImportInput.addEventListener('change', (e) => handleAction('import-data', mobileImportInput, e));
         mobileImportInput.dataset.listenerAttached = 'true';
     }
+
+    const importScheduleInput = document.getElementById('import-schedule-input');
+    if (importScheduleInput && importScheduleInput.dataset.listenerAttached !== 'true') {
+        importScheduleInput.addEventListener('change', (e) => handleAction('import-schedule', importScheduleInput, e));
+        importScheduleInput.dataset.listenerAttached = 'true';
+    }
 }
 
 
