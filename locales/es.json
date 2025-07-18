@@ -178,5 +178,6 @@
   "term_name_placeholder": "Nombre (Ej: 1er Trimestre)",
   "add_term": "Añadir Trimestre",
   "add_term_alert": "Por favor, introduce un nombre y las fechas de inicio y fin.",
-  "view_all_terms": "Ver todo"
+  "view_all_terms": "Ver todo",
+  "course_dates_not_set": "Defina las fechas de inicio y fin del curso en Configuración."
 }
