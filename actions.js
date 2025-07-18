@@ -462,7 +462,84 @@ export const actionHandlers = {
         saveState();
     },
     'print-schedule': () => window.print(),
-    'print-student-sheet': () => window.print(),
+
+    'print-student-sheet': () => {
+        const student = state.students.find(s => s.id === state.selectedStudentId);
+        if (!student) return;
+
+        const enrolledClasses = state.activities.filter(a => a.type === 'class' && a.studentIds?.includes(student.id));
+
+        const annotationsByClass = Object.entries(state.classEntries).reduce((acc, [entryId, entryData]) => {
+            const annotation = entryData.annotations?.[student.id];
+            if (annotation && annotation.trim() !== '') {
+                const [activityId, date] = entryId.split('_');
+                const activity = state.activities.find(a => a.id === activityId);
+                if (!acc[activityId]) {
+                    acc[activityId] = { name: activity ? activity.name : 'Clase eliminada', annotations: [] };
+                }
+                acc[activityId].annotations.push({ date, annotation });
+            }
+            return acc;
+        }, {});
+        
+        Object.values(annotationsByClass).forEach(classData => {
+            classData.annotations.sort((a, b) => new Date(b.date) - new Date(a.date));
+        });
+
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Ficha de ${student.name}</title>
+                    <style>
+                        body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; margin: 20mm; }
+                        h1 { font-size: 22pt; text-align: center; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 40px; }
+                        h2 { font-size: 16pt; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 25px; margin-bottom: 15px; }
+                        h3 { font-size: 14pt; font-weight: bold; margin-top: 20px; margin-bottom: 10px; }
+                        p, li { line-height: 1.5; }
+                        ul { list-style-position: inside; padding-left: 0; }
+                        .annotation-item { page-break-inside: avoid; margin-bottom: 15px; padding-left: 20px; border-left: 1px solid #eee; }
+                        .annotation-date { font-style: italic; color: #555; font-size: 10pt; }
+                        .notes-section { page-break-inside: avoid; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${student.name}</h1>
+                    
+                    <div class="notes-section">
+                        <h2>${t('enrolled_classes_title')}</h2>
+                        <ul>${enrolledClasses.map(c => `<li>${c.name}</li>`).join('')}</ul>
+                    </div>
+                    
+                    <div class="notes-section">
+                        <h2>${t('general_notes_label')}</h2>
+                        <p>${student.generalNotes.replace(/\n/g, '<br>') || ''}</p>
+                    </div>
+
+                    <h2>${t('session_notes_history_title')}</h2>
+                    ${Object.values(annotationsByClass).sort((a,b) => a.name.localeCompare(b.name)).map(classData => `
+                        <div>
+                            <h3>${classData.name}</h3>
+                            ${classData.annotations.map(item => `
+                                <div class="annotation-item">
+                                    <p class="annotation-date">${new Date(item.date + 'T00:00:00').toLocaleDateString(document.documentElement.lang, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                    <p>${item.annotation.replace(/\n/g, '<br>')}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `).join('')}
+                </body>
+            </html>
+        `);
+        
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 250);
+    },
+    
     'select-activity': (id, element) => {
         const { activityId, day, time, date } = element.dataset;
         const activityInfo = state.activities.find(a => a.id === activityId);
