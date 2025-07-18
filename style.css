@@ -127,6 +127,33 @@ input[type=number] {
         display: none; /* Oculta los puntos de color */
     }
 
+    #student-sheet-content h4 { /* Class titles in annotations */
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #student-sheet-content .pl-6 { /* Indentation for annotations */
+        padding-left: 20px !important;
+        border: none !important;
+    }
+    #student-sheet-content .relative {
+        padding-left: 0 !important;
+    }
+    #student-sheet-content .relative p {
+        font-size: 10pt;
+        color: #555 !important;
+    }
+    #student-sheet-content .relative textarea {
+        font-size: 12pt !important;
+        padding-top: 0 !important;
+        padding-left: 10px !important;
+        border-left: 1px solid #eee !important;
+    }
+    #student-sheet-content .absolute {
+        display: none !important; /* Hide timeline decorations */
+    }
+
     /* --- Estilos Generales de Impresión (para Horario) --- */
     #printable-schedule table {
         width: 100%;
@@ -151,8 +178,7 @@ input[type=number] {
         line-height: 1.2 !important;
         height: 100% !important;
     }
-    
-    /* CAMBIOS AÑADIDOS */
+
     #printable-schedule thead {
         display: none !important;
     }
