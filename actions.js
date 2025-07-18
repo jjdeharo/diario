@@ -674,7 +674,7 @@ export const actionHandlers = {
             endInput.value = '';
             saveState();
         } else {
-            alert('Por favor, introduce al menos un nombre y una fecha de inicio para el festivo.');
+            alert(t('add_holiday_alert'));
         }
     },
 
