@@ -51,7 +51,7 @@
   "activities_management_title": "Gestión de Actividades",
   "activity_name_placeholder": "Nombre de la actividad",
   "activity_type_class": "Clase con alumnado",
-  "activity_type_general": "Activitat general",
+  "activity_type_general": "Actividad general",
   "students_in_this_class": "Alumnado en esta clase:",
   "no_students_assigned_short": "No hay alumnado asignado.",
   "add_existing_student": "Añadir estudiante existente:",
@@ -169,5 +169,10 @@
   "import_summary_students": "Estudiantes",
   "import_summary_timeslots": "Franjas horarias",
   "import_summary_entries": "Entradas de horario",
-  "modal_close": "Cerrar"
+  "modal_close": "Cerrar",
+  "terms_management_title": "Gestión de Trimestres",
+  "term_name_placeholder": "Nombre (Ej: 1er Trimestre)",
+  "add_term": "Añadir Trimestre",
+  "add_term_alert": "Por favor, introduce un nombre y las fechas de inicio y fin.",
+  "view_all_terms": "Ver todo"
 }
