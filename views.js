@@ -1,7 +1,7 @@
 // views.js: Contiene todas las funciones que generan el HTML de las vistas.
 
 import { state } from './state.js';
-import { darkenColor, getWeekStartDate, getWeekDateRange, formatDate, isSameDate, findNextSession, findPreviousSession, DAY_KEYS, findNextClassSession, getCurrentTermDateRange } from './utils.js';
+import { darkenColor, getWeekStartDate, getWeekDateRange, formatDate, isSameDate, findNextSession, findPreviousSession, DAY_KEYS, findNextClassSession, getCurrentTermDateRange, getWeeksForCourse } from './utils.js';
 import { t } from './i18n.js'; // Importamos la función de traducción
 
 // Función de ayuda para ordenar alumnos por nombre
@@ -160,6 +160,17 @@ export function renderScheduleView() {
         return `<option value="${term.id}" ${state.selectedTermId === term.id ? 'selected' : ''}>${term.name}${dateRange}</option>`;
     }).join('');
 
+    const courseWeeks = getWeeksForCourse();
+    const weeksListHtml = courseWeeks.length > 0
+        ? courseWeeks.map(week =>
+            `<button
+                data-action="go-to-week"
+                data-date="${week.date}"
+                class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >${week.text}</button>`
+        ).join('')
+        : `<div class="px-4 py-2 text-sm text-gray-500">${t('course_dates_not_set')}</div>`;
+
     return `
         <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-900/50 min-h-full">
             <div class="hidden sm:flex justify-between items-center mb-6 no-print">
@@ -180,7 +191,14 @@ export function renderScheduleView() {
              <div class="flex justify-between items-center mb-4">
                 <div class="flex items-center gap-4">
                     <button data-action="prev-week" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"><i data-lucide="chevron-left"></i></button>
-                    <span class="font-semibold text-center text-lg">${getWeekDateRange(state.currentDate)}</span>
+                    <div class="relative">
+                        <button id="week-selector-btn" data-action="toggle-week-selector" class="font-semibold text-center text-lg p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+                            ${getWeekDateRange(state.currentDate)}
+                        </button>
+                        <div id="week-selector-menu" class="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-30 hidden border dark:border-gray-700 max-h-80 overflow-y-auto">
+                            ${weeksListHtml}
+                        </div>
+                    </div>
                     <button data-action="next-week" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"><i data-lucide="chevron-right"></i></button>
                 </div>
                 <div class="flex items-center gap-2">
