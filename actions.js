@@ -1,7 +1,7 @@
-// actions.js
+// actions.js: Define toda la lógica de las acciones del usuario.
 
 import { state, saveState, getRandomPastelColor } from './state.js';
-import { showModal, showInfoModal, findNextClassSession } from './utils.js'; 
+import { showModal, showInfoModal, findNextClassSession } from './utils.js';
 import { t } from './i18n.js';
 
 function showImportSummary(data) {
@@ -18,9 +18,6 @@ function showImportSummary(data) {
         window.location.reload();
     });
 }
-
-export const actionHandlers = {
-    // ... el resto del objeto actionHandlers
 
 export const actionHandlers = {
     // --- Load Example Action ---
@@ -41,8 +38,7 @@ export const actionHandlers = {
                 state.courseStartDate = data.courseStartDate || '';
                 state.courseEndDate = data.courseEndDate || '';
                 saveState();
-                alert(t('import_success_alert'));
-                window.location.reload(); // To ensure the app re-initializes with the new state
+                showImportSummary(data);
             } catch (error) {
                 console.error('Error loading example data:', error);
                 alert(t('import_error_alert'));
@@ -56,9 +52,8 @@ export const actionHandlers = {
             const card = document.getElementById(`class-card-${activityId}`);
             if (card) {
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                // Add a temporary highlight effect for better user feedback
                 card.style.transition = 'outline 0.1s ease-in-out';
-                card.style.outline = '3px solid #3b82f6'; // blue-600
+                card.style.outline = '3px solid #3b82f6';
                 setTimeout(() => {
                     card.style.outline = 'none';
                 }, 1500);
@@ -563,8 +558,7 @@ export const actionHandlers = {
                     state.courseStartDate = data.courseStartDate || '';
                     state.courseEndDate = data.courseEndDate || '';
                     saveState();
-                    alert(t('import_success_alert'));
-                    window.location.reload();
+                    showImportSummary(data);
                 } catch (error) {
                     alert(t('import_error_alert'));
                 }
@@ -582,7 +576,6 @@ export const actionHandlers = {
     // --- Privacy Policy Action (New) ---
     'show-privacy-policy': () => {
         const title = t('privacy_title');
-        // Usamos las claves de traducción para generar el contenido del modal
         const content = `
             <div class="prose prose-sm dark:prose-invert max-w-none text-left text-gray-700 dark:text-gray-300">
                 <p>${t('privacy_p1')}</p>
