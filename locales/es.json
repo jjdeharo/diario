@@ -184,5 +184,9 @@
   "holiday_name_placeholder": "Nombre (Ej: Navidad, Día Libre...)",
   "end_date_optional": "Fecha de Fin (opcional)",
   "add_holiday": "Añadir Festivo",
-  "add_holiday_alert": "Por favor, introduce al menos un nombre y una fecha de inicio para el festivo."
+  "add_holiday_alert": "Por favor, introduce al menos un nombre y una fecha de inicio para el festivo.",
+  "settings_tab_calendar": "Calendario",
+  "settings_tab_schedule": "Horario",
+  "settings_tab_activities": "Actividades y Alumnado",
+  "settings_tab_data": "Datos"
 }
