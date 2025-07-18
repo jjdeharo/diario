@@ -20,6 +20,15 @@ function showImportSummary(data) {
 }
 
 export const actionHandlers = {
+    // --- Settings Tab Action ---
+    'select-settings-tab': (id, element) => {
+        const tabId = element.dataset.tabId;
+        if (tabId) {
+            state.settingsActiveTab = tabId;
+            // No es necesario saveState() aquí, se guarda al renderizar
+        }
+    },
+
     // --- Load Example Action ---
     'load-example': () => {
         showModal(t('import_data_confirm_title'), t('import_data_confirm_text'), async () => {
@@ -656,7 +665,6 @@ export const actionHandlers = {
         }
         saveState();
     },
-    // --- Holiday Actions ---
     'add-holiday': () => {
         const nameInput = document.getElementById('new-holiday-name');
         const startInput = document.getElementById('new-holiday-start');
@@ -667,7 +675,7 @@ export const actionHandlers = {
                 id: crypto.randomUUID(),
                 name: nameInput.value.trim(),
                 startDate: startInput.value,
-                endDate: endInput.value || startInput.value // Si no hay fecha de fin, es un solo día
+                endDate: endInput.value || startInput.value
             });
             nameInput.value = '';
             startInput.value = '';
@@ -677,7 +685,6 @@ export const actionHandlers = {
             alert(t('add_holiday_alert'));
         }
     },
-
     'delete-holiday': (id) => {
         state.holidays = state.holidays.filter(holiday => holiday.id !== id);
         saveState();
