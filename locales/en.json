@@ -162,6 +162,6 @@
   "manual_data_backup_li1_new": "<strong>Save:</strong> Click this button to download a <code>.json</code> file with all your data (schedule, classes, students, notes, etc.). Save this file in a safe place as a backup.",
   "manual_data_backup_li2_new": "<strong>Open:</strong> If you switch computers or want to restore a backup, use this button and select the <code>.json</code> file you saved. <strong>Warning!</strong> This will replace all current data in the application.",
   "manual_data_delete_title": "Delete all data",
-  "manual_data_delete_p1_new": "In the \"Danger Zone\" on the <strong>Settings</strong> page, you can permanently delete all application data. This action cannot be undone, so use it with caution."
+  "manual_data_delete_p1_new": "In the \"Danger Zone\" on the <strong>Settings</strong> page, you can permanently delete all application data. This action cannot be undone, so use it with caution.",
   "quick_nav_to_class": "Quick navigation to class..."
 }
