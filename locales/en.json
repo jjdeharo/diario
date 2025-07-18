@@ -184,5 +184,9 @@
   "holiday_name_placeholder": "Name (e.g. Christmas, Day Off...)",
   "end_date_optional": "End Date (optional)",
   "add_holiday": "Add Holiday",
-  "add_holiday_alert": "Please enter at least a name and a start date for the holiday."
+  "add_holiday_alert": "Please enter at least a name and a start date for the holiday.",
+  "settings_tab_calendar": "Calendar",
+  "settings_tab_schedule": "Schedule",
+  "settings_tab_activities": "Activities & Students",
+  "settings_tab_data": "Data"
 }
