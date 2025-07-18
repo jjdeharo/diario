@@ -1,7 +1,7 @@
 // views.js: Contiene todas las funciones que generan el HTML de las vistas.
 
 import { state } from './state.js';
-import { darkenColor, getWeekStartDate, getWeekDateRange, formatDate, isSameDate, findNextSession, findPreviousSession, DAY_KEYS } from './utils.js';
+import { darkenColor, getWeekStartDate, getWeekDateRange, formatDate, isSameDate, findNextSession, findPreviousSession, DAY_KEYS, findNextClassSession } from './utils.js';
 import { t } from './i18n.js'; // Importamos la función de traducción
 
 // Función de ayuda para ordenar alumnos por nombre
@@ -200,15 +200,32 @@ export function renderClassesView() {
             </div>
         `).join('');
 
+        const formattedStartDate = c.startDate ? new Date(c.startDate + 'T00:00:00').toLocaleDateString(document.documentElement.lang) : 'N/A';
+        const formattedEndDate = c.endDate ? new Date(c.endDate + 'T00:00:00').toLocaleDateString(document.documentElement.lang) : 'N/A';
+
         return `
-        <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold mb-4" style="color: ${darkenColor(c.color, 40)}">${c.name}</h3>
-            <div class="space-y-2 mb-4">
-                ${studentsHtml || `<p class="text-sm text-gray-500 dark:text-gray-400">${t('no_students_in_class')}</p>`}
-            </div>
-            <div class="flex flex-col sm:flex-row gap-2 border-t border-gray-200 dark:border-gray-700 pt-4">
-                <input type="text" id="new-student-name-${c.id}" placeholder="${t('add_student_placeholder')}" class="flex-grow p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
-                <button data-action="add-student-to-class" data-activity-id="${c.id}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 flex-shrink-0 flex items-center justify-center gap-2"><i data-lucide="plus" class="w-5 h-5 sm:hidden"></i><span class="hidden sm:inline">${t('add')}</span></button>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md flex flex-col">
+            <button data-action="go-to-class-session" data-activity-id="${c.id}" class="p-4 text-left w-full bg-gray-50 dark:bg-gray-700/50 rounded-t-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <h3 class="text-xl font-bold" style="color: ${darkenColor(c.color, 40)}">${c.name}</h3>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="users" class="w-4 h-4"></i>
+                        <span>${c.studentIds?.length || 0} ${t('students_in_this_class')}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>${formattedStartDate} - ${formattedEndDate}</span>
+                    </div>
+                </div>
+            </button>
+            <div class="p-4 flex-grow">
+                <div class="space-y-2 mb-4 max-h-48 overflow-y-auto">
+                    ${studentsHtml || `<p class="text-sm text-gray-500 dark:text-gray-400">${t('no_students_in_class')}</p>`}
+                </div>
+                <div class="flex flex-col sm:flex-row gap-2 border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <input type="text" id="new-student-name-${c.id}" placeholder="${t('add_student_placeholder')}" class="flex-grow p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
+                    <button data-action="add-student-to-class" data-activity-id="${c.id}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 flex-shrink-0 flex items-center justify-center gap-2"><i data-lucide="plus" class="w-5 h-5 sm:hidden"></i><span class="hidden sm:inline">${t('add')}</span></button>
+                </div>
             </div>
         </div>
         `;
