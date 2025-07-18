@@ -56,6 +56,21 @@ export function getCurrentTermDateRange() {
     };
 }
 
+// NUEVA FUNCIÓN: Comprueba si una fecha es festivo
+export function isHoliday(date) {
+    const checkDate = new Date(date);
+    checkDate.setHours(0, 0, 0, 0);
+
+    for (const holiday of state.holidays) {
+        const startDate = new Date(holiday.startDate + 'T00:00:00');
+        const endDate = new Date(holiday.endDate + 'T00:00:00');
+        if (checkDate >= startDate && checkDate <= endDate) {
+            return holiday;
+        }
+    }
+    return null;
+}
+
 
 function findSession(activityId, fromDate, direction) {
     const timeSlots = state.timeSlots;
@@ -75,6 +90,9 @@ function findSession(activityId, fromDate, direction) {
             if (direction === 'next' && currentDate > termRange.end) return null;
             if (direction === 'previous' && currentDate < termRange.start) return null;
         }
+
+        // No buscar en días festivos
+        if (isHoliday(currentDate)) continue;
 
         const dayOfWeek = (currentDate.getDay() + 6) % 7; // Monday = 0
         
@@ -125,6 +143,11 @@ export function findNextClassSession(activityId) {
 
     for (let i = 0; i < 365; i++) {
         if(termRange && searchDate > termRange.end) return null;
+
+        if (isHoliday(searchDate)) {
+             searchDate.setDate(searchDate.getDate() + 1);
+             continue;
+        }
 
         const dayOfWeek = (searchDate.getDay() + 6) % 7;
         const dayKey = DAY_KEYS[dayOfWeek];
