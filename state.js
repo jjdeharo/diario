@@ -16,6 +16,7 @@ export const state = {
     courseEndDate: '',   // Mantenido por retrocompatibilidad.
     terms: [], // NUEVO: Array para guardar los trimestres.
     selectedTermId: 'all', // NUEVO: ID del trimestre seleccionado ('all' para ver todo).
+    holidays: [], // NUEVO: Array para guardar los días festivos.
     selectedActivity: null,
     selectedStudentId: null,
     editingTimeSlotId: null,
@@ -41,6 +42,7 @@ export function saveState() {
         courseEndDate: state.courseEndDate,
         terms: state.terms, // Guardar los trimestres
         selectedTermId: state.selectedTermId, // Guardar la selección
+        holidays: state.holidays, // Guardar los festivos
     };
     localStorage.setItem('teacherDashboardData', JSON.stringify(dataToSave));
     
@@ -72,5 +74,6 @@ export function loadState() {
         state.courseEndDate = parsedData.courseEndDate || '';
         state.terms = parsedData.terms || []; // Cargar los trimestres
         state.selectedTermId = parsedData.selectedTermId || 'all'; // Cargar la selección
+        state.holidays = parsedData.holidays || []; // Cargar los festivos
     }
 }
