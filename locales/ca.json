@@ -162,6 +162,6 @@
   "manual_data_backup_li1_new": "<strong>Desar:</strong> Prem aquest botó per descarregar un fitxer <code>.json</code> amb totes les teves dades (horari, classes, alumnes, anotacions, etc.). Desa aquest fitxer en un lloc segur com a còpia de seguretat.",
   "manual_data_backup_li2_new": "<strong>Obrir:</strong> Si canvies d'ordinador o vols restaurar una còpia, fes servir aquest botó i selecciona el fitxer <code>.json</code> que vas desar. <strong>Atenció!</strong> Això reemplaçarà totes les dades actuals de l'aplicació.",
   "manual_data_delete_title": "Esborrar totes les dades",
-  "manual_data_delete_p1_new": "A la \"Zona de Perill\" de la pàgina de <strong>Configuració</strong>, pots esborrar permanentment tota la informació de l'aplicació. Aquesta acció no es pot desfer, així que fes-la servir amb precaució."
+  "manual_data_delete_p1_new": "A la \"Zona de Perill\" de la pàgina de <strong>Configuració</strong>, pots esborrar permanentment tota la informació de l'aplicació. Aquesta acció no es pot desfer, així que fes-la servir amb precaució.",
   "quick_nav_to_class": "Navegació ràpida a classe..."
 }
