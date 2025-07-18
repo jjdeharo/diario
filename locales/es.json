@@ -164,4 +164,10 @@
   "manual_data_delete_title": "Borrar todos los datos",
   "manual_data_delete_p1_new": "En la \"Zona de Peligro\" de la página de <strong>Configuración</strong>, puedes borrar permanentemente toda la información de la aplicación. Esta acción no se puede deshacer, así que úsala con precaución.",
   "quick_nav_to_class": "Navegación rápida a clase..."
+  "import_summary_title": "Resumen de la importación",
+  "import_summary_activities": "Actividades",
+  "import_summary_students": "Estudiantes",
+  "import_summary_timeslots": "Franjas horarias",
+  "import_summary_entries": "Entradas de horario",
+  "modal_close": "Cerrar"
 }
