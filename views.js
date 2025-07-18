@@ -139,7 +139,26 @@ export function renderScheduleView() {
         return `<tr><td class="p-2 border border-gray-200 dark:border-gray-700 font-mono bg-gray-50 dark:bg-gray-800 text-sm">${time.label}</td>${cells}</tr>`;
     }).join('');
     
-    const termOptions = state.terms.map(term => `<option value="${term.id}" ${state.selectedTermId === term.id ? 'selected' : ''}>${term.name}</option>`).join('');
+    const formatDateForDisplay = (dateStr) => {
+        if (!dateStr) return '';
+        const dateObj = new Date(dateStr + 'T00:00:00');
+        return dateObj.toLocaleDateString(document.documentElement.lang, { day: '2-digit', month: '2-digit', year: 'numeric' });
+    };
+
+    let allTermsDateRange = '';
+    if (state.courseStartDate && state.courseEndDate) {
+        const start = formatDateForDisplay(state.courseStartDate);
+        const end = formatDateForDisplay(state.courseEndDate);
+        allTermsDateRange = ` (${start} - ${end})`;
+    }
+    const allTermsOption = `<option value="all" ${state.selectedTermId === 'all' ? 'selected' : ''}>${t('view_all_terms')}${allTermsDateRange}</option>`;
+
+    const termOptions = state.terms.map(term => {
+        const start = formatDateForDisplay(term.startDate);
+        const end = formatDateForDisplay(term.endDate);
+        const dateRange = ` (${start} - ${end})`;
+        return `<option value="${term.id}" ${state.selectedTermId === term.id ? 'selected' : ''}>${term.name}${dateRange}</option>`;
+    }).join('');
 
     return `
         <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-900/50 min-h-full">
@@ -166,7 +185,7 @@ export function renderScheduleView() {
                 </div>
                 <div class="flex items-center gap-2">
                     <select data-action="select-term" class="p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm">
-                        <option value="all" ${state.selectedTermId === 'all' ? 'selected' : ''}>${t('view_all_terms')}</option>
+                        ${allTermsOption}
                         ${termOptions}
                     </select>
                     <button data-action="today" class="bg-gray-600 text-white px-3 py-2 text-sm rounded-md hover:bg-gray-700">${t('today')}</button>
