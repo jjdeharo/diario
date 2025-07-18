@@ -42,6 +42,21 @@ export function isSameDate(date1, date2) {
            date1.getDate() === date2.getDate();
 }
 
+// NUEVO: Devuelve el rango de fechas del trimestre seleccionado o null si es 'all'
+export function getCurrentTermDateRange() {
+    if (state.selectedTermId === 'all' || !state.terms) {
+        return null;
+    }
+    const term = state.terms.find(t => t.id === state.selectedTermId);
+    if (!term) return null;
+
+    return {
+        start: new Date(term.startDate + 'T00:00:00'),
+        end: new Date(term.endDate + 'T23:59:59')
+    };
+}
+
+
 function findSession(activityId, fromDate, direction) {
     const timeSlots = state.timeSlots;
     const increment = direction === 'next' ? 1 : -1;
@@ -49,13 +64,22 @@ function findSession(activityId, fromDate, direction) {
     if (!activity) return null;
 
     let currentDate = new Date(fromDate);
-    currentDate.setDate(currentDate.getDate() + increment);
+    
+    const termRange = getCurrentTermDateRange();
 
     for (let i = 0; i < 365; i++) {
+        currentDate.setDate(currentDate.getDate() + increment);
+
+        // Si hay un trimestre seleccionado, no buscar fuera de su rango
+        if (termRange) {
+            if (direction === 'next' && currentDate > termRange.end) return null;
+            if (direction === 'previous' && currentDate < termRange.start) return null;
+        }
+
         const dayOfWeek = (currentDate.getDay() + 6) % 7; // Monday = 0
         
         if (dayOfWeek >= 0 && dayOfWeek < 5) { // Solo de Lunes a Viernes
-            const dayKey = DAY_KEYS[dayOfWeek]; // Usar la clave en inglés
+            const dayKey = DAY_KEYS[dayOfWeek];
             const slotsToCheck = direction === 'next' ? timeSlots : [...timeSlots].reverse();
 
             for (const time of slotsToCheck) {
@@ -77,7 +101,6 @@ function findSession(activityId, fromDate, direction) {
                 }
             }
         }
-        currentDate.setDate(currentDate.getDate() + increment);
     }
     return null;
 }
@@ -95,8 +118,14 @@ export function findNextClassSession(activityId) {
     if (!activity) return null;
 
     let searchDate = new Date(state.currentDate);
+    const termRange = getCurrentTermDateRange();
+    if(termRange && searchDate < termRange.start) {
+        searchDate = new Date(termRange.start);
+    }
 
     for (let i = 0; i < 365; i++) {
+        if(termRange && searchDate > termRange.end) return null;
+
         const dayOfWeek = (searchDate.getDay() + 6) % 7;
         const dayKey = DAY_KEYS[dayOfWeek];
 
@@ -104,8 +133,7 @@ export function findNextClassSession(activityId) {
             for (const timeSlot of state.timeSlots) {
                 const scheduleKey = `${dayKey}-${timeSlot.label}`;
                 if (state.schedule[scheduleKey] === activityId) {
-                    // Check if this date is valid for the activity
-                     const courseStartDate = state.courseStartDate ? new Date(state.courseStartDate + 'T00:00:00') : null;
+                    const courseStartDate = state.courseStartDate ? new Date(state.courseStartDate + 'T00:00:00') : null;
                     const courseEndDate = state.courseEndDate ? new Date(state.courseEndDate + 'T23:59:59') : null;
                     const activityStartDate = activity.startDate ? new Date(activity.startDate + 'T00:00:00') : courseStartDate;
                     const activityEndDate = activity.endDate ? new Date(activity.endDate + 'T23:59:59') : courseEndDate;
@@ -156,7 +184,6 @@ export function showModal(title, content, onConfirm) {
     modalCloseBtn.onclick = close;
 }
 
-// --- Nueva función para modales de información ---
 export function showInfoModal(title, htmlContent, onClose) {
     const modalContainer = document.getElementById('modal-container');
     const modalTitle = document.getElementById('modal-title');
