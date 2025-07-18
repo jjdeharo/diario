@@ -1,0 +1,154 @@
+{
+  "activities": [
+    {
+      "id": "bio-4eso",
+      "name": "Biología 4º ESO",
+      "type": "class",
+      "studentIds": ["s1", "s2", "s3", "s4"],
+      "color": "#CAFFBF",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "mat-1bach",
+      "name": "Matemáticas 1º Bach",
+      "type": "class",
+      "studentIds": ["s5", "s6", "s7"],
+      "color": "#A0C4FF",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "dig-2eso",
+      "name": "Digitalización 2º ESO",
+      "type": "class",
+      "studentIds": ["s8", "s9", "s10"],
+      "color": "#FFD6A5",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "tut-4eso",
+      "name": "Tutoría 4º ESO",
+      "type": "class",
+      "studentIds": ["s1", "s2", "s3", "s4"],
+      "color": "#FFC6FF",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "guardia-1",
+      "name": "Guardia",
+      "type": "general",
+      "studentIds": [],
+      "color": "#EAEAEA",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "reunion-dpto",
+      "name": "Reunión Depto.",
+      "type": "general",
+      "studentIds": [],
+      "color": "#BDB2FF",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
+    }
+  ],
+  "students": [
+    {"id": "s1", "name": "Lucía Fernández", "generalNotes": "Muy buena actitud, siempre pregunta para aclarar dudas."},
+    {"id": "s2", "name": "Marcos Jiménez", "generalNotes": "Necesita sentarse en primera fila para mantener la concentración."},
+    {"id": "s3", "name": "Sara Moreno", "generalNotes": ""},
+    {"id": "s4", "name": "Hugo Ruiz", "generalNotes": "Le cuesta entregar los trabajos a tiempo."},
+    {"id": "s5", "name": "Daniela Navarro", "generalNotes": "Excelente en resolución de problemas complejos."},
+    {"id": "s6", "name": "Pablo Alonso", "generalNotes": ""},
+    {"id": "s7", "name": "Valeria Torres", "generalNotes": "Faltó la semana del 23/09 por enfermedad."},
+    {"id": "s8", "name": "Javier Ramos", "generalNotes": "Muy creativo con las herramientas digitales."},
+    {"id": "s9", "name": "Alba Gil", "generalNotes": "A veces se frustra si el software no funciona como espera."},
+    {"id": "s10", "name": "Adrián Castillo", "generalNotes": ""}
+  ],
+  "timeSlots": [
+    {"id": "t1", "label": "08:15-09:10", "order": 0},
+    {"id": "t2", "label": "09:10-10:05", "order": 1},
+    {"id": "t3", "label": "10:05-11:00", "order": 2},
+    {"id": "t4", "label": "11:00-11:30", "order": 3},
+    {"id": "t5", "label": "11:30-12:25", "order": 4},
+    {"id": "t6", "label": "12:25-13:20", "order": 5},
+    {"id": "t7", "label": "13:20-14:15", "order": 6}
+  ],
+  "schedule": {
+    "Monday-08:15-09:10": "bio-4eso",
+    "Monday-09:10-10:05": "mat-1bach",
+    "Monday-10:05-11:00": "dig-2eso",
+    "Monday-11:30-12:25": "guardia-1",
+    "Monday-12:25-13:20": "bio-4eso",
+    "Tuesday-09:10-10:05": "tut-4eso",
+    "Tuesday-10:05-11:00": "mat-1bach",
+    "Tuesday-12:25-13:20": "dig-2eso",
+    "Tuesday-13:20-14:15": "bio-4eso",
+    "Wednesday-08:15-09:10": "mat-1bach",
+    "Wednesday-09:10-10:05": "bio-4eso",
+    "Wednesday-11:30-12:25": "dig-2eso",
+    "Wednesday-12:25-13:20": "reunion-dpto",
+    "Thursday-08:15-09:10": "guardia-1",
+    "Thursday-09:10-10:05": "dig-2eso",
+    "Thursday-11:30-12:25": "mat-1bach",
+    "Thursday-12:25-13:20": "bio-4eso",
+    "Friday-08:15-09:10": "mat-1bach",
+    "Friday-10:05-11:00": "bio-4eso",
+    "Friday-11:30-12:25": "dig-2eso"
+  },
+  "scheduleOverrides": [],
+  "classEntries": {
+    "bio-4eso_2025-07-14": {
+      "planned": "Tema 3: Genética Mendeliana. Explicación de las Leyes de Mendel. Realizar problemas 1-5.",
+      "completed": "Explicación completa. Hemos resuelto los problemas 1 y 2 en clase. El resto son deberes.",
+      "annotations": {
+        "s1": "Lucía entiende los cuadros de Punnett a la primera.",
+        "s4": "A Hugo le cuesta plantear los problemas. Le he dado una ficha de apoyo."
+      }
+    },
+    "mat-1bach_2025-07-14": {
+      "planned": "Tema 2: Trigonometría. Razones trigonométricas en triángulos rectángulos.",
+      "completed": "Teoría explicada y ejercicios de ejemplo. Han entendido bien seno, coseno y tangente.",
+      "annotations": {
+        "s5": "Daniela ya conocía el tema y ha ayudado a sus compañeros."
+      }
+    },
+    "tut-4eso_2025-07-15": {
+      "planned": "Charla sobre técnicas de estudio. Preparación de los exámenes de la primera evaluación.",
+      "completed": "Charla realizada. Se ha generado un debate interesante sobre la gestión del tiempo.",
+      "annotations": {}
+    },
+    "bio-4eso_2025-07-16": {
+      "planned": "Corrección de los deberes de genética. Empezar con herencia intermedia y codominancia.",
+      "completed": "Deberes corregidos. Hemos visto la herencia intermedia, pero no ha dado tiempo a la codominancia.",
+      "annotations": {
+        "s2": "Marcos sigue teniendo dificultades con la terminología (homocigoto, heterocigoto)."
+      }
+    },
+    "mat-1bach_2025-07-21": {
+      "planned": "Resolución de triángulos cualesquiera: Teorema del seno y del coseno."
+    },
+    "dig-2eso_2025-07-21": {
+      "planned": "Práctica 2: Creación de un documento de texto con formato avanzado (estilos, tablas de contenido)."
+    },
+    "bio-4eso_2025-07-23": {
+      "planned": "Explicar la codominancia y los grupos sanguíneos como ejemplo. Problemas de herencia de grupos sanguíneos."
+    },
+    "mat-1bach_2025-07-28": {
+      "planned": "Ejercicios de repaso de trigonometría. Hoja de problemas para preparar el examen."
+    },
+    "bio-4eso_2025-07-30": {
+      "planned": "Repaso general de genética. Sesión de dudas antes del examen."
+    },
+    "dig-2eso_2025-08-04": {
+      "planned": "Introducción a las hojas de cálculo. Fórmulas básicas y referencias a celdas."
+    },
+    "mat-1bach_2025-08-04": {
+      "planned": "Examen del Tema 2: Trigonometría."
+    }
+  },
+  "courseStartDate": "2025-01-01",
+  "courseEndDate": "2025-12-31"
+}
