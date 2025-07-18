@@ -33,7 +33,18 @@ export function getWeekDateRange(date) {
     endOfWeek.setDate(startOfWeek.getDate() + 4);
     const options = { month: 'short', day: 'numeric' };
     const lang = document.documentElement.lang || 'es';
-    return `${startOfWeek.toLocaleDateString(lang, options)} - ${endOfWeek.toLocaleDateString(lang, {...options, year: 'numeric'})}`;
+
+    // Formateamos las fechas
+    let startStr = startOfWeek.toLocaleDateString(lang, options);
+    let endStr = endOfWeek.toLocaleDateString(lang, {...options, year: 'numeric'});
+
+    // Corrección específica para el euskera: eliminar el día de la semana entre paréntesis.
+    if (lang === 'eu') {
+        startStr = startStr.replace(/ \(.+\)/, '');
+        endStr = endStr.replace(/ \(.+\)/, '');
+    }
+
+    return `${startStr} - ${endStr}`;
 }
 
 export function isSameDate(date1, date2) {
