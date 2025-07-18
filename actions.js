@@ -2,7 +2,7 @@
 
 import { state, saveState, getRandomPastelColor } from './state.js';
 // Se importa 'showInfoModal' además de 'showModal'
-import { showModal, showInfoModal } from './utils.js'; 
+import { showModal, showInfoModal, findNextClassSession } from './utils.js'; 
 import { t } from './i18n.js'; // Importamos la función de traducción
 
 export const actionHandlers = {
@@ -211,6 +211,17 @@ export const actionHandlers = {
         });
     },
     // --- Activity Actions ---
+    'go-to-class-session': (id, element) => {
+        const activityId = element.dataset.activityId;
+        const nextSession = findNextClassSession(activityId);
+        if (nextSession) {
+            const activityInfo = state.activities.find(a => a.id === activityId);
+            state.selectedActivity = { ...activityInfo, ...nextSession };
+            state.activeView = 'activityDetail';
+        } else {
+            alert('No hay clases programadas para esta asignatura en el futuro.');
+        }
+    },
     'add-activity': () => {
         const nameInput = document.getElementById('new-activity-name');
         const name = nameInput.value.trim();
