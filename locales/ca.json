@@ -184,5 +184,9 @@
   "holiday_name_placeholder": "Nom (Ex: Nadal, Dia Lliure...)",
   "end_date_optional": "Data de Fi (opcional)",
   "add_holiday": "Afegeix Festiu",
-  "add_holiday_alert": "Si us plau, introdueix almenys un nom i una data d'inici per al festiu."
+  "add_holiday_alert": "Si us plau, introdueix almenys un nom i una data d'inici per al festiu.",
+  "settings_tab_calendar": "Calendari",
+  "settings_tab_schedule": "Horari",
+  "settings_tab_activities": "Activitats i Alumnat",
+  "settings_tab_data": "Dades"
 }
