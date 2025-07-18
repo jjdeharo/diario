@@ -12,8 +12,10 @@ export const state = {
     scheduleOverrides: [],
     classEntries: {},
     currentDate: new Date(),
-    courseStartDate: '',
-    courseEndDate: '',
+    courseStartDate: '', // Mantenido por retrocompatibilidad, pero los trimestres tienen prioridad.
+    courseEndDate: '',   // Mantenido por retrocompatibilidad.
+    terms: [], // NUEVO: Array para guardar los trimestres.
+    selectedTermId: 'all', // NUEVO: ID del trimestre seleccionado ('all' para ver todo).
     selectedActivity: null,
     selectedStudentId: null,
     editingTimeSlotId: null,
@@ -37,6 +39,8 @@ export function saveState() {
         classEntries: state.classEntries,
         courseStartDate: state.courseStartDate,
         courseEndDate: state.courseEndDate,
+        terms: state.terms, // Guardar los trimestres
+        selectedTermId: state.selectedTermId, // Guardar la selección
     };
     localStorage.setItem('teacherDashboardData', JSON.stringify(dataToSave));
     
@@ -66,5 +70,7 @@ export function loadState() {
         state.classEntries = parsedData.classEntries || {};
         state.courseStartDate = parsedData.courseStartDate || '';
         state.courseEndDate = parsedData.courseEndDate || '';
+        state.terms = parsedData.terms || []; // Cargar los trimestres
+        state.selectedTermId = parsedData.selectedTermId || 'all'; // Cargar la selección
     }
 }
