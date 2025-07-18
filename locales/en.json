@@ -179,5 +179,10 @@
   "add_term": "Add Term",
   "add_term_alert": "Please enter a name, start date, and end date.",
   "view_all_terms": "View All",
-  "course_dates_not_set": "Set the course start and end dates in Settings."
+  "course_dates_not_set": "Set the course start and end dates in Settings.",
+  "holidays_management_title": "Holiday and Non-School Period Management",
+  "holiday_name_placeholder": "Name (e.g. Christmas, Day Off...)",
+  "end_date_optional": "End Date (optional)",
+  "add_holiday": "Add Holiday",
+  "add_holiday_alert": "Please enter at least a name and a start date for the holiday."
 }
