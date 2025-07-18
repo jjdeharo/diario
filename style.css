@@ -30,33 +30,46 @@ input[type=number] {
 @media print {
     body {
         font-family: 'Times New Roman', serif;
-    }
-    body * {
-        visibility: hidden;
-    }
-    .printable-area, .printable-area * {
-        visibility: visible;
-        color: #000 !important; /* Aseguramos texto negro en impresión */
-    }
-    .printable-area {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin: 0;
-        padding: 40px;
-        font-size: 12pt;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
     .no-print {
         display: none !important;
     }
-
-    /* --- Estilos para la Ficha del Alumnado --- */
-    #student-sheet-content {
+    
+    /* Oculta todo por defecto */
+    body * {
+        visibility: hidden;
+    }
+    
+    /* Muestra solo el área imprimible y sus hijos */
+    .printable-area, .printable-area * {
+        visibility: visible;
+        color: #000 !important;
+    }
+    
+    /* Ajusta el área imprimible para que fluya en el documento */
+    .printable-area {
+        position: static !important;
+        margin: 20mm;
+        padding: 0;
+        width: auto !important;
+        max-width: none !important;
         box-shadow: none !important;
         border: none !important;
-        padding: 0 !important;
+        font-size: 12pt;
     }
+
+    /* --- Estilos específicos para la Ficha del Alumnado --- */
+    
+    /* Elimina el scroll y la altura máxima del historial de anotaciones */
+    #student-sheet-content .max-h-\[400px\] {
+        max-height: none !important;
+    }
+    #student-sheet-content .overflow-y-auto {
+        overflow: visible !important;
+    }
+
     #student-sheet-content h2.print\:block {
         display: block !important;
         text-align: center;
@@ -72,6 +85,12 @@ input[type=number] {
         margin-bottom: 15px;
         border-bottom: 1px solid #ccc;
         padding-bottom: 5px;
+    }
+    #student-sheet-content h4 { /* Títulos de clase en anotaciones */
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
     #student-sheet-content label {
         font-weight: bold;
@@ -97,8 +116,7 @@ input[type=number] {
     }
     #student-sheet-content textarea {
         display: block;
-        white-space: pre-wrap; /* Respeta los saltos de línea */
-        padding-top: 5px !important;
+        white-space: pre-wrap;
     }
     #student-sheet-content ul {
         list-style-position: inside;
@@ -112,49 +130,27 @@ input[type=number] {
     #student-sheet-content li:last-child {
         border-bottom: none;
     }
-    #student-sheet-content .p-3.bg-gray-50 {
+    #student-sheet-content .p-3.bg-gray-50,
+    #student-sheet-content .mb-4,
+    #student-sheet-content .pl-6 {
         background: transparent !important;
         padding: 15px 0 !important;
-        border-top: 1px solid #eee;
+        border: none !important;
     }
     #student-sheet-content .p-3.bg-gray-50:first-child {
         border-top: none;
     }
-    #student-sheet-content .flex.items-center.gap-2.mb-2 {
+    #student-sheet-content .flex.items-center.gap-2.mb-2,
+    #student-sheet-content .flex.items-center.gap-2.mb-3 {
         font-weight: bold;
     }
-    #student-sheet-content .w-3.h-3.rounded-full, #student-sheet-content .w-4.h-4.rounded-full {
-        display: none; /* Oculta los puntos de color */
-    }
-
-    #student-sheet-content h4 { /* Class titles in annotations */
-        font-size: 14pt;
-        font-weight: bold;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    #student-sheet-content .pl-6 { /* Indentation for annotations */
-        padding-left: 20px !important;
-        border: none !important;
-    }
-    #student-sheet-content .relative {
-        padding-left: 0 !important;
-    }
-    #student-sheet-content .relative p {
-        font-size: 10pt;
-        color: #555 !important;
-    }
-    #student-sheet-content .relative textarea {
-        font-size: 12pt !important;
-        padding-top: 0 !important;
-        padding-left: 10px !important;
-        border-left: 1px solid #eee !important;
-    }
+    #student-sheet-content .w-3.h-3.rounded-full, 
+    #student-sheet-content .w-4.h-4.rounded-full,
     #student-sheet-content .absolute {
-        display: none !important; /* Hide timeline decorations */
+        display: none; /* Oculta puntos de color y decoraciones de la línea de tiempo */
     }
 
-    /* --- Estilos Generales de Impresión (para Horario) --- */
+    /* --- Estilos para el Horario --- */
     #printable-schedule table {
         width: 100%;
         table-layout: fixed;
@@ -169,8 +165,8 @@ input[type=number] {
     }
     #printable-schedule button, #printable-schedule div[style*="background-color"] {
         border: 1px solid #ccc !important;
-        background-color: #f0f0f0 !important; /* Fondo claro para impresión */
-        color: #000 !important; /* Texto negro para impresión */
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
         font-size: 8pt !important;
         padding: 2px !important;
         min-height: 0 !important;
@@ -178,11 +174,9 @@ input[type=number] {
         line-height: 1.2 !important;
         height: 100% !important;
     }
-
     #printable-schedule thead {
         display: none !important;
     }
-
     #printable-schedule button span.absolute {
         display: none !important;
     }
