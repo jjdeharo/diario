@@ -152,7 +152,7 @@
   "manual_settings_data_title": "Pestanya Dades",
   "manual_settings_data_p1": "Aquesta secció conté opcions delicades per a la gestió de totes les teves dades.",
   "manual_data_delete_title": "Zona de Perill",
-  "manual_data_delete_p1_new": "A la \"Zona de Perill\" de la pàgina de <strong>Configuració</strong>, pots esborrar permanentment tota la informació de l'aplicació. Aquesta acció no es pot desfer, així que utilitza-la amb precaució.<br><br>El botó <strong>Importa només horari</strong> permet recuperar únicament l'horari de dades que s'han desat prèviament. Tota la resta de dades (festius, assignatures, alumnes i anotacions) es perdran."
+  "manual_data_delete_p1_new": "A la \"Zona de Perill\" de la pàgina de <strong>Configuració</strong>, pots esborrar permanentment tota la informació de l'aplicació. Aquesta acció no es pot desfer, així que utilitza-la amb precaució.<br><br>El botó <strong>Importa només horari</strong> permet recuperar únicament l'horari de dades que s'han desat prèviament. Tota la resta de dades (festius, assignatures, alumnes i anotacions) es perdran.",
   "manual_schedule_usage_title": "Ús de l'Horari",
   "manual_schedule_usage_p1": "La vista d'<strong>Horari</strong> és el teu centre d'operacions diari.",
   "manual_schedule_usage_li1": "<strong>Navegació:</strong> Fes servir les fletxes per moure't entre setmanes, el botó \"Avui\" per tornar a la setmana actual, o fes clic a la data per desplegar un selector i saltar a qualsevol setmana del curs.",
