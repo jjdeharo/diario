@@ -15325,5 +15325,26 @@
     }
   },
   "courseStartDate": "2025-01-01",
-  "courseEndDate": "2025-12-31"
+  "courseEndDate": "2025-12-31",
+  "terms": [
+    {
+      "id": "d550b33c-3e20-42ef-a9de-3123f1483dac",
+      "name": "1r trimestre",
+      "startDate": "2025-01-01",
+      "endDate": "2025-07-17"
+    },
+    {
+      "id": "80b81967-110c-4868-8d50-ca0ffdaf54b7",
+      "name": "2 trimestre",
+      "startDate": "2025-07-18",
+      "endDate": "2025-07-31"
+    },
+    {
+      "id": "650c1c69-8f18-40a8-a8de-cc23769c2539",
+      "name": "3r trimestre",
+      "startDate": "2025-08-01",
+      "endDate": "2025-12-31"
+    }
+  ],
+  "selectedTermId": "all"
 }
