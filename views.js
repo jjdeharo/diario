@@ -287,17 +287,6 @@ export function renderStudentDetailView() {
         return `<div class="p-6"><p class="text-red-500">${t('student_not_found')}</p><button data-action="back-to-classes">${t('back')}</button></div>`;
     }
 
-    const enrolledClasses = state.activities.filter(a => a.type === 'class' && a.studentIds?.includes(student.id));
-
-    const classesHtml = enrolledClasses.length > 0 
-        ? enrolledClasses.map(c => `
-            <li class="flex items-center gap-2 p-2 bg-gray-100 dark:bg-gray-700 rounded-md">
-                <span class="w-4 h-4 rounded-full" style="background-color: ${c.color};"></span>
-                <span>${c.name}</span>
-            </li>
-        `).join('')
-        : `<p class="text-gray-500 dark:text-gray-400">${t('student_not_in_classes')}</p>`;
-    
     const termRange = getCurrentTermDateRange();
     
     const annotationsByClass = Object.entries(state.classEntries).reduce((acc, [entryId, entryData]) => {
@@ -327,9 +316,27 @@ export function renderStudentDetailView() {
         annotationsByClass[activityId].annotations.sort((a, b) => b.date - a.date);
     }
     
-    const annotationsHistoryHtml = Object.keys(annotationsByClass).length > 0
-        ? Object.entries(annotationsByClass).sort(([, a], [, b]) => a.name.localeCompare(b.name)).map(([activityId, classData]) => `
-            <div class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg mb-4">
+    const annotationClasses = Object.entries(annotationsByClass).sort(([, a], [, b]) => a.name.localeCompare(b.name));
+
+    const classSelectorOptions = annotationClasses.map(([activityId, classData]) =>
+        `<option value="${activityId}">${classData.name}</option>`
+    ).join('');
+
+    const classSelectorHtml = annotationClasses.length > 0 ? `
+        <div class="mb-4 no-print">
+            <label for="annotation-class-nav" class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('quick_nav_to_class')}</label>
+            <select id="annotation-class-nav"
+                    onchange="if(this.value) { document.getElementById('annotation-block-' + this.value).scrollIntoView({ behavior: 'smooth', block: 'start' }); }"
+                    class="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <option value="">-- ${t('choose_a_class')} --</option>
+                ${classSelectorOptions}
+            </select>
+        </div>
+    ` : '';
+    
+    const annotationsHistoryHtml = annotationClasses.length > 0
+        ? annotationClasses.map(([activityId, classData]) => `
+            <div id="annotation-block-${activityId}" class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg mb-4">
                 <h4 class="flex items-center gap-2 mb-3 text-md font-semibold">
                     <span class="w-4 h-4 rounded-full" style="background-color: ${classData.color};"></span>
                     <span>${classData.name}</span>
@@ -370,17 +377,15 @@ export function renderStudentDetailView() {
                         <label for="edit-student-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('student_name_label')}</label>
                         <input type="text" id="edit-student-name" data-action="edit-student-name" data-student-id="${student.id}" value="${student.name}" class="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
-                    <div>
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-2">${t('enrolled_classes_title')}</h3>
-                        <ul class="space-y-2">${classesHtml}</ul>
-                    </div>
+
                     <div>
                         <label for="edit-student-notes" class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('general_notes_label')}</label>
                         <textarea id="edit-student-notes" data-action="edit-student-notes" data-student-id="${student.id}" placeholder="${t('general_notes_placeholder')}" class="mt-1 block w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 h-32">${student.generalNotes || ''}</textarea>
                     </div>
                     <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">${t('session_notes_history_title')}</h3>
-                        <div class="space-y-4 max-h-[400px] overflow-y-auto pr-2">${annotationsHistoryHtml}</div>
+                        ${classSelectorHtml}
+                        <div class="space-y-4 pr-2">${annotationsHistoryHtml}</div>
                     </div>
                 </div>
             </div>
