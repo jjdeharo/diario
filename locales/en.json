@@ -169,5 +169,10 @@
   "import_summary_students": "Students",
   "import_summary_timeslots": "Time Slots",
   "import_summary_entries": "Schedule Entries",
-  "modal_close": "Close"
+  "modal_close": "Close",
+  "terms_management_title": "Terms Management",
+  "term_name_placeholder": "Name (e.g. 1st Term)",
+  "add_term": "Add Term",
+  "add_term_alert": "Please enter a name, start date, and end date.",
+  "view_all_terms": "View All"
 }
