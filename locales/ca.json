@@ -179,5 +179,10 @@
   "add_term": "Afegeix Trimestre",
   "add_term_alert": "Si us plau, introdueix un nom i les dates d'inici i fi.",
   "view_all_terms": "Veure-ho tot",
-  "course_dates_not_set": "Defineixi les dates d'inici i fi del curs a Configuració."
+  "course_dates_not_set": "Defineixi les dates d'inici i fi del curs a Configuració.",
+  "holidays_management_title": "Gestió de Festius i Períodes no Lectius",
+  "holiday_name_placeholder": "Nom (Ex: Nadal, Dia Lliure...)",
+  "end_date_optional": "Data de Fi (opcional)",
+  "add_holiday": "Afegeix Festiu",
+  "add_holiday_alert": "Si us plau, introdueix almenys un nom i una data d'inici per al festiu."
 }
