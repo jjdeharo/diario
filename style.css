@@ -48,10 +48,11 @@ input[type=number] {
         color: #000 !important;
     }
     
-    /* Ajusta el área imprimible para que fluya en el documento */
+    /* *** INICIO DE LA CORRECCIÓN CLAVE *** */
+    /* Resetea la posición del área imprimible para que fluya en el documento */
     .printable-area {
-        position: static !important;
-        margin: 20mm;
+        position: static !important; /* Permite que el contenido ocupe varias páginas */
+        margin: 20mm; /* Añade márgenes de impresión estándar */
         padding: 0;
         width: auto !important;
         max-width: none !important;
@@ -60,8 +61,6 @@ input[type=number] {
         font-size: 12pt;
     }
 
-    /* --- Estilos específicos para la Ficha del Alumnado --- */
-    
     /* Elimina el scroll y la altura máxima del historial de anotaciones */
     #student-sheet-content .max-h-\[400px\] {
         max-height: none !important;
@@ -69,7 +68,9 @@ input[type=number] {
     #student-sheet-content .overflow-y-auto {
         overflow: visible !important;
     }
+    /* *** FIN DE LA CORRECCIÓN CLAVE *** */
 
+    /* --- Estilos específicos para la Ficha del Alumnado --- */
     #student-sheet-content h2.print\:block {
         display: block !important;
         text-align: center;
@@ -85,12 +86,14 @@ input[type=number] {
         margin-bottom: 15px;
         border-bottom: 1px solid #ccc;
         padding-bottom: 5px;
+        page-break-after: avoid; /* Evita saltos de página justo después de un título */
     }
     #student-sheet-content h4 { /* Títulos de clase en anotaciones */
         font-size: 14pt;
         font-weight: bold;
         margin-top: 20px;
         margin-bottom: 10px;
+        page-break-after: avoid;
     }
     #student-sheet-content label {
         font-weight: bold;
@@ -148,6 +151,9 @@ input[type=number] {
     #student-sheet-content .w-4.h-4.rounded-full,
     #student-sheet-content .absolute {
         display: none; /* Oculta puntos de color y decoraciones de la línea de tiempo */
+    }
+    #student-sheet-content .relative {
+        page-break-inside: avoid; /* Intenta no cortar un bloque de anotación por la mitad */
     }
 
     /* --- Estilos para el Horario --- */
