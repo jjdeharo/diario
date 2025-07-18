@@ -163,4 +163,5 @@
   "manual_data_backup_li2_new": "<strong>Abrir:</strong> Si cambias de ordenador o quieres restaurar una copia, usa este botón y selecciona el archivo <code>.json</code> que guardaste. <strong>¡Atención!</strong> Esto reemplazará todos los datos actuales de la aplicación.",
   "manual_data_delete_title": "Borrar todos los datos",
   "manual_data_delete_p1_new": "En la \"Zona de Peligro\" de la página de <strong>Configuración</strong>, puedes borrar permanentemente toda la información de la aplicación. Esta acción no se puede deshacer, así que úsala con precaución."
+  "quick_nav_to_class": "Navegación rápida a clase..."
 }
