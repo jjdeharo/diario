@@ -179,5 +179,10 @@
   "add_term": "Añadir Trimestre",
   "add_term_alert": "Por favor, introduce un nombre y las fechas de inicio y fin.",
   "view_all_terms": "Ver todo",
-  "course_dates_not_set": "Defina las fechas de inicio y fin del curso en Configuración."
+  "course_dates_not_set": "Defina las fechas de inicio y fin del curso en Configuración.",
+  "holidays_management_title": "Gestión de Festivos y Periodos no Lectivos",
+  "holiday_name_placeholder": "Nombre (Ej: Navidad, Día Libre...)",
+  "end_date_optional": "Fecha de Fin (opcional)",
+  "add_holiday": "Añadir Festivo",
+  "add_holiday_alert": "Por favor, introduce al menos un nombre y una fecha de inicio para el festivo."
 }
