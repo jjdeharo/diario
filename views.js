@@ -183,15 +183,18 @@ export function renderScheduleView() {
 
 export function renderClassesView() {
     renderMobileHeaderActions([]);
-    const classes = state.activities.filter(a => a.type === 'class');
+    const classes = state.activities.filter(a => a.type === 'class').sort((a, b) => a.name.localeCompare(b.name));
+    
     if (classes.length === 0) {
         return `<div class="p-4 sm:p-6"><h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">${t('classes_view_title')}</h2><p class="text-gray-500 dark:text-gray-400">${t('no_classes_created')}</p></div>`;
     }
 
+    const selectOptions = classes.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+
     const classesHtml = classes.map(c => {
         const studentsOfClass = state.students
             .filter(s => c.studentIds?.includes(s.id))
-            .sort(sortStudentsByName); // Ordenar alumnos
+            .sort(sortStudentsByName);
         
         const studentsHtml = studentsOfClass.map(s => `
             <div class="flex justify-between items-center p-2 bg-gray-100 dark:bg-gray-700 rounded-md">
@@ -204,7 +207,7 @@ export function renderClassesView() {
         const formattedEndDate = c.endDate ? new Date(c.endDate + 'T00:00:00').toLocaleDateString(document.documentElement.lang) : 'N/A';
 
         return `
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md flex flex-col">
+        <div id="class-card-${c.id}" class="bg-white dark:bg-gray-800 rounded-lg shadow-md flex flex-col">
             <button data-action="go-to-class-session" data-activity-id="${c.id}" class="p-4 text-left w-full bg-gray-50 dark:bg-gray-700/50 rounded-t-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                 <h3 class="text-xl font-bold" style="color: ${darkenColor(c.color, 40)}">${c.name}</h3>
                 <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1">
@@ -233,7 +236,16 @@ export function renderClassesView() {
 
     return `
         <div class="p-4 sm:p-6 bg-gray-50 dark:bg-gray-900/50 min-h-full">
-            <h2 class="hidden sm:block text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">${t('classes_view_title')}</h2>
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-4">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">${t('classes_view_title')}</h2>
+                <div class="flex-shrink-0 w-full sm:w-64">
+                    <label for="class-quick-nav" class="sr-only">${t('quick_nav_to_class')}</label>
+                    <select id="class-quick-nav" data-action="go-to-class-card" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm">
+                        <option value="">${t('quick_nav_to_class')}</option>
+                        ${selectOptions}
+                    </select>
+                </div>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 ${classesHtml}
             </div>
