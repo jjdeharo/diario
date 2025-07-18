@@ -559,7 +559,6 @@ export function renderSettingsView() {
         </div>
     `).join('');
 
-    // NUEVO: HTML para la gestión de festivos
     const holidaysHtml = state.holidays.map(holiday => `
         <div class="p-3 border border-gray-200 dark:border-gray-600 rounded-md flex justify-between items-center">
             <div>
@@ -610,34 +609,22 @@ export function renderSettingsView() {
                         <div class="space-y-3 mt-4">${termsHtml}</div>
                     </div>
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-lg font-semibold mb-3">Gestión de Festivos y Periodos no Lectivos</h3>
+                        <h3 class="text-lg font-semibold mb-3">${t('holidays_management_title')}</h3>
                         <div class="space-y-4 p-4 border border-dashed dark:border-gray-600 rounded-md">
-                            <input type="text" id="new-holiday-name" placeholder="Nombre (Ej: Navidad, Día Libre...)" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
+                            <input type="text" id="new-holiday-name" placeholder="${t('holiday_name_placeholder')}" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Fecha de Inicio</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('start_date')}</label>
                                     <input type="date" id="new-holiday-start" class="mt-1 w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Fecha de Fin (opcional)</label>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('end_date_optional')}</label>
                                     <input type="date" id="new-holiday-end" class="mt-1 w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
                                 </div>
                             </div>
-                            <button data-action="add-holiday" class="w-full bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 flex items-center justify-center gap-2"><i data-lucide="plus" class="w-5 h-5"></i>Añadir Festivo</button>
+                            <button data-action="add-holiday" class="w-full bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 flex items-center justify-center gap-2"><i data-lucide="plus" class="w-5 h-5"></i>${t('add_holiday')}</button>
                         </div>
                         <div class="space-y-3 mt-4">${holidaysHtml}</div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-lg font-semibold mb-3">${t('activities_management_title')}</h3>
-                        <div class="flex gap-2 mb-2">
-                            <input type="text" id="new-activity-name" placeholder="${t('activity_name_placeholder')}" class="flex-grow p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md"/>
-                            <button data-action="add-activity" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 flex items-center gap-2"><i data-lucide="plus-circle" class="w-5 h-5"></i>${t('add')}</button>
-                        </div>
-                        <div class="flex gap-4 mb-4 text-sm">
-                            <label class="flex items-center gap-2"><input type="radio" name="activityType" value="class" checked class="form-radio text-blue-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600"/>${t('activity_type_class')}</label>
-                            <label class="flex items-center gap-2"><input type="radio" name="activityType" value="general" class="form-radio text-blue-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600"/>${t('activity_type_general')}</label>
-                        </div>
-                        <div class="space-y-3 max-h-96 overflow-y-auto pr-2">${activitiesHtml}</div>
                     </div>
                 </div>
                 <div class="space-y-8">
@@ -649,7 +636,7 @@ export function renderSettingsView() {
                             <button data-action="import-students" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 flex items-center justify-center gap-2"><i data-lucide="upload" class="w-5 h-5"></i> ${t('import_students')}</button>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><i data-lucide="wand-2" class="w-5 h-5"></i> ${t('schedule_generator_title')}</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div><label class="block text-sm font-medium">${t('start_time')}</label><input type="time" id="gen-start-time" value="08:00" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md"></div>
@@ -668,7 +655,7 @@ export function renderSettingsView() {
                         </div>
                         <div class="space-y-2">${timeSlotsHtml}</div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <h3 class="text-lg font-semibold mb-3">${t('weekly_schedule_config_title')}</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full border-collapse text-sm">
@@ -693,7 +680,7 @@ export function renderSettingsView() {
                         </div>
                         <div class="mt-6 space-y-2">${scheduleOverridesHtml}</div>
                     </div>
-                    <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 p-4 rounded-r-lg">
+                     <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 p-4 rounded-r-lg">
                         <h3 class="text-lg font-semibold text-red-800 dark:text-red-300 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5"></i> ${t('danger_zone_title')}</h3>
                         <div class="mt-4 space-y-2">
                             <label class="w-full bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 flex items-center justify-center gap-2 cursor-pointer">
