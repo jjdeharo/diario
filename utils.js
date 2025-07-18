@@ -90,6 +90,48 @@ export function findPreviousSession(activityId, fromDate) {
     return findSession(activityId, fromDate, 'previous');
 }
 
+export function findNextClassSession(activityId) {
+    const activity = state.activities.find(a => a.id === activityId);
+    if (!activity) return null;
+
+    let searchDate = new Date(state.currentDate);
+
+    for (let i = 0; i < 365; i++) {
+        const dayOfWeek = (searchDate.getDay() + 6) % 7;
+        const dayKey = DAY_KEYS[dayOfWeek];
+
+        if (dayOfWeek < 5) { // Monday to Friday
+            for (const timeSlot of state.timeSlots) {
+                const scheduleKey = `${dayKey}-${timeSlot.label}`;
+                if (state.schedule[scheduleKey] === activityId) {
+                    // Check if this date is valid for the activity
+                     const courseStartDate = state.courseStartDate ? new Date(state.courseStartDate + 'T00:00:00') : null;
+                    const courseEndDate = state.courseEndDate ? new Date(state.courseEndDate + 'T23:59:59') : null;
+                    const activityStartDate = activity.startDate ? new Date(activity.startDate + 'T00:00:00') : courseStartDate;
+                    const activityEndDate = activity.endDate ? new Date(activity.endDate + 'T23:59:59') : courseEndDate;
+
+                    let inDateRange = true;
+                    if (courseStartDate && searchDate < courseStartDate) inDateRange = false;
+                    if (courseEndDate && searchDate > courseEndDate) inDateRange = false;
+                    if (activityStartDate && searchDate < activityStartDate) inDateRange = false;
+                    if (activityEndDate && searchDate > activityEndDate) inDateRange = false;
+                    
+                    if (inDateRange) {
+                        return {
+                            day: dayKey,
+                            time: timeSlot.label,
+                            date: formatDate(searchDate)
+                        };
+                    }
+                }
+            }
+        }
+        searchDate.setDate(searchDate.getDate() + 1);
+    }
+    return null; // No session found in the next year
+}
+
+
 export function showModal(title, content, onConfirm) {
     const modalContainer = document.getElementById('modal-container');
     const modalTitle = document.getElementById('modal-title');
