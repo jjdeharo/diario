@@ -6,6 +6,33 @@ import { showModal, showInfoModal } from './utils.js';
 import { t } from './i18n.js'; // Importamos la función de traducción
 
 export const actionHandlers = {
+    // --- Load Example Action ---
+    'load-example': () => {
+        showModal(t('import_data_confirm_title'), t('import_data_confirm_text'), async () => {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/ejemplo.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                state.activities = data.activities || [];
+                state.students = data.students || [];
+                state.timeSlots = data.timeSlots || [];
+                state.schedule = data.schedule || {};
+                state.scheduleOverrides = data.scheduleOverrides || [];
+                state.classEntries = data.classEntries || {};
+                state.courseStartDate = data.courseStartDate || '';
+                state.courseEndDate = data.courseEndDate || '';
+                saveState();
+                alert(t('import_success_alert'));
+                window.location.reload(); // To ensure the app re-initializes with the new state
+            } catch (error) {
+                console.error('Error loading example data:', error);
+                alert(t('import_error_alert'));
+            }
+        });
+    },
+
     // --- Student Actions ---
     'add-student-to-class': (id, element) => {
         const activityId = element.dataset.activityId;
