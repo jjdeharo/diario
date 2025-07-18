@@ -152,7 +152,7 @@
   "manual_settings_data_title": "Lapela Datos",
   "manual_settings_data_p1": "Esta sección contén opcións delicadas para a xestión de todos os teus datos.",
   "manual_data_delete_title": "Zona de Perigo",
-  "manual_data_delete_p1_new": "Na \"Zona de Perigo\" da páxina de <strong>Configuración</strong>, podes borrar permanentemente toda a información da aplicación. Esta acción non se pode desfacer, así que úsaa con precaución.<br><br>O botón <strong>Importar só horario</strong> permite recuperar unicamente o horario de datos gardados previamente. Todo o resto de datos (materias, alumnos e anotacións) perderase."
+  "manual_data_delete_p1_new": "Na \"Zona de Perigo\" da páxina de <strong>Configuración</strong>, podes borrar permanentemente toda a información da aplicación. Esta acción non se pode desfacer, así que úsaa con precaución.<br><br>O botón <strong>Importar só horario</strong> permite recuperar unicamente o horario de datos gardados previamente. Todo o resto de datos (materias, alumnos e anotacións) perderase.",
   "manual_schedule_usage_title": "Uso do Horario",
   "manual_schedule_usage_p1": "A vista de <strong>Horario</strong> é o teu centro de operacións diario.",
   "manual_schedule_usage_li1": "<strong>Navegación:</strong> Usa as frechas para moverte entre semanas, o botón \"Hoxe\" para volver á semana actual, ou fai clic na data para despregar un selector e saltar a calquera semana do curso.",
