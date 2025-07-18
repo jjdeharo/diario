@@ -442,6 +442,34 @@ export const actionHandlers = {
     'today': () => {
         state.currentDate = new Date();
     },
+    'toggle-week-selector': () => {
+        const menu = document.getElementById('week-selector-menu');
+        const btn = document.getElementById('week-selector-btn');
+        if (menu) {
+            menu.classList.toggle('hidden');
+            
+            if (!menu.classList.contains('hidden')) {
+                const closeHandler = (e) => {
+                    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                        menu.classList.add('hidden');
+                        document.removeEventListener('click', closeHandler, true);
+                    }
+                };
+                document.addEventListener('click', closeHandler, true);
+            }
+        }
+    },
+    'go-to-week': (id, element) => {
+        const dateStr = element.dataset.date;
+        if (dateStr) {
+            state.currentDate = new Date(dateStr + 'T12:00:00');
+            
+            const menu = document.getElementById('week-selector-menu');
+            if (menu) {
+                menu.classList.add('hidden');
+            }
+        }
+    },
     // --- Class Entry Actions ---
     'planned-change': (id, element) => {
         const entryId = `${state.selectedActivity.id}_${state.selectedActivity.date}`;
