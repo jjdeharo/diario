@@ -67,7 +67,7 @@ function handleAction(action, element, event) {
         'save-timeslot', 'cancel-edit-timeslot', 'edit-activity', 'save-activity',
         'cancel-edit-activity', 'prev-week', 'next-week', 'today', 'select-student', 'back-to-classes',
         'add-selected-student-to-class', 'navigate-to-session', 'add-schedule-override', 'delete-schedule-override',
-        'go-to-class-session', 'add-term', 'delete-term', 'select-term' // Acciones de trimestres
+        'go-to-class-session', 'add-term', 'delete-term', 'select-term', 'go-to-week'
     ];
     
     if (actionHandlers[action]) {
