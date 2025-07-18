@@ -16,11 +16,12 @@ export const state = {
     courseEndDate: '',   // Mantenido por retrocompatibilidad.
     terms: [], 
     selectedTermId: 'all', 
-    holidays: [], // NUEVO: Array para guardar los días festivos.
+    holidays: [], 
     selectedActivity: null,
     selectedStudentId: null,
     editingTimeSlotId: null,
     editingActivityId: null,
+    settingsActiveTab: 'calendar', // NUEVO: Pestaña activa en la vista de configuración
 };
 
 export function getRandomPastelColor() {
@@ -42,7 +43,8 @@ export function saveState() {
         courseEndDate: state.courseEndDate,
         terms: state.terms, 
         selectedTermId: state.selectedTermId,
-        holidays: state.holidays, // Guardar los festivos
+        holidays: state.holidays,
+        settingsActiveTab: state.settingsActiveTab // Guardar la pestaña activa
     };
     localStorage.setItem('teacherDashboardData', JSON.stringify(dataToSave));
     
@@ -74,6 +76,7 @@ export function loadState() {
         state.courseEndDate = parsedData.courseEndDate || '';
         state.terms = parsedData.terms || []; 
         state.selectedTermId = parsedData.selectedTermId || 'all';
-        state.holidays = parsedData.holidays || []; // Cargar los festivos
+        state.holidays = parsedData.holidays || [];
+        state.settingsActiveTab = parsedData.settingsActiveTab || 'calendar'; // Cargar la pestaña activa
     }
 }
