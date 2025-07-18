@@ -276,34 +276,49 @@ export function renderStudentDetailView() {
         `).join('')
         : `<p class="text-gray-500 dark:text-gray-400">${t('student_not_in_classes')}</p>`;
     
-    const studentAnnotations = Object.entries(state.classEntries)
-        .map(([entryId, entryData]) => {
-            const annotation = entryData.annotations?.[student.id];
-            if (annotation && annotation.trim() !== '') {
-                const [activityId, date] = entryId.split('_');
-                const activity = state.activities.find(a => a.id === activityId);
-                return {
-                    entryId,
-                    date,
-                    activityName: activity ? activity.name : 'Clase eliminada',
-                    activityColor: activity ? activity.color : '#cccccc',
-                    annotation
+    const annotationsByClass = Object.entries(state.classEntries).reduce((acc, [entryId, entryData]) => {
+        const annotation = entryData.annotations?.[student.id];
+        if (annotation && annotation.trim() !== '') {
+            const [activityId, date] = entryId.split('_');
+            const activity = state.activities.find(a => a.id === activityId);
+
+            if (!acc[activityId]) {
+                acc[activityId] = {
+                    name: activity ? activity.name : 'Clase eliminada',
+                    color: activity ? activity.color : '#cccccc',
+                    annotations: []
                 };
             }
-            return null;
-        })
-        .filter(Boolean)
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            acc[activityId].annotations.push({
+                entryId,
+                date,
+                annotation
+            });
+        }
+        return acc;
+    }, {});
 
-    const annotationsHistoryHtml = studentAnnotations.length > 0
-        ? studentAnnotations.map(item => `
-            <div class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                <div class="flex items-center gap-2 mb-2 text-sm font-medium">
-                    <span class="w-3 h-3 rounded-full" style="background-color: ${item.activityColor};"></span>
-                    <span>${item.activityName}</span>
-                    <span class="text-gray-500 dark:text-gray-400 font-normal">- ${new Date(item.date + 'T00:00:00').toLocaleDateString(document.documentElement.lang, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+    for (const activityId in annotationsByClass) {
+        annotationsByClass[activityId].annotations.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+    
+    const annotationsHistoryHtml = Object.keys(annotationsByClass).length > 0
+        ? Object.entries(annotationsByClass).sort(([, a], [, b]) => a.name.localeCompare(b.name)).map(([activityId, classData]) => `
+            <div class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg mb-4">
+                <h4 class="flex items-center gap-2 mb-3 text-md font-semibold">
+                    <span class="w-4 h-4 rounded-full" style="background-color: ${classData.color};"></span>
+                    <span>${classData.name}</span>
+                </h4>
+                <div class="space-y-3 pl-6 border-l-2 border-gray-200 dark:border-gray-600">
+                ${classData.annotations.map(item => `
+                    <div class="relative">
+                         <span class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-gray-300 dark:bg-gray-500 border-4 border-gray-50 dark:border-gray-700/50"></span>
+                         <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">${new Date(item.date + 'T00:00:00').toLocaleDateString(document.documentElement.lang, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                         <textarea data-action="edit-session-annotation" data-entry-id="${item.entryId}" data-student-id="${student.id}" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 h-24">${item.annotation}</textarea>
+                    </div>
+                `).join('')}
                 </div>
-                <textarea data-action="edit-session-annotation" data-entry-id="${item.entryId}" data-student-id="${student.id}" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 h-24">${item.annotation}</textarea>
             </div>
         `).join('')
         : `<p class="text-gray-500 dark:text-gray-400">${t('no_session_notes')}</p>`;
