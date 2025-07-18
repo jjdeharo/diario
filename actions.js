@@ -1,9 +1,26 @@
-// actions.js: Define toda la lógica de las acciones del usuario.
+// actions.js
 
 import { state, saveState, getRandomPastelColor } from './state.js';
-// Se importa 'showInfoModal' además de 'showModal'
 import { showModal, showInfoModal, findNextClassSession } from './utils.js'; 
-import { t } from './i18n.js'; // Importamos la función de traducción
+import { t } from './i18n.js';
+
+function showImportSummary(data) {
+    const title = t('import_summary_title');
+    const content = `
+        <ul class="list-disc list-inside space-y-2 text-left">
+            <li><strong>${t('import_summary_activities')}:</strong> ${data.activities?.length || 0}</li>
+            <li><strong>${t('import_summary_students')}:</strong> ${data.students?.length || 0}</li>
+            <li><strong>${t('import_summary_timeslots')}:</strong> ${data.timeSlots?.length || 0}</li>
+            <li><strong>${t('import_summary_entries')}:</strong> ${Object.keys(data.classEntries || {}).length}</li>
+        </ul>
+    `;
+    showInfoModal(title, content, () => {
+        window.location.reload();
+    });
+}
+
+export const actionHandlers = {
+    // ... el resto del objeto actionHandlers
 
 export const actionHandlers = {
     // --- Load Example Action ---
