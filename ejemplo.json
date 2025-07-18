@@ -4,7 +4,12 @@
       "id": "bio-4eso",
       "name": "Biología 4º ESO",
       "type": "class",
-      "studentIds": ["s1", "s2", "s3", "s4"],
+      "studentIds": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "color": "#CAFFBF",
       "startDate": "2025-01-01",
       "endDate": "2025-12-31"
@@ -13,7 +18,11 @@
       "id": "mat-1bach",
       "name": "Matemáticas 1º Bach",
       "type": "class",
-      "studentIds": ["s5", "s6", "s7"],
+      "studentIds": [
+        "s5",
+        "s6",
+        "s7"
+      ],
       "color": "#A0C4FF",
       "startDate": "2025-01-01",
       "endDate": "2025-12-31"
@@ -22,7 +31,11 @@
       "id": "dig-2eso",
       "name": "Digitalización 2º ESO",
       "type": "class",
-      "studentIds": ["s8", "s9", "s10"],
+      "studentIds": [
+        "s8",
+        "s9",
+        "s10"
+      ],
       "color": "#FFD6A5",
       "startDate": "2025-01-01",
       "endDate": "2025-12-31"
@@ -31,7 +44,12 @@
       "id": "tut-4eso",
       "name": "Tutoría 4º ESO",
       "type": "class",
-      "studentIds": ["s1", "s2", "s3", "s4"],
+      "studentIds": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "color": "#FFC6FF",
       "startDate": "2025-01-01",
       "endDate": "2025-12-31"
@@ -55,98 +73,438 @@
       "endDate": "2025-12-31"
     },
     {
-        "id": "fq-3eso",
-        "name": "Física y Química 3º ESO",
-        "type": "class",
-        "studentIds": ["s11", "s12", "s13", "s14", "s15", "s16", "s17", "s18", "s19", "s20", "s21", "s22", "s23", "s24", "s25", "s26", "s27", "s28", "s29", "s30", "s31", "s32", "s33", "s34", "s35", "s36", "s37", "s38"],
-        "color": "#FFADAD",
-        "startDate": "2025-01-01",
-        "endDate": "2025-12-31"
+      "id": "fq-3eso",
+      "name": "Física y Química 3º ESO",
+      "type": "class",
+      "studentIds": [
+        "s11",
+        "s12",
+        "s13",
+        "s14",
+        "s15",
+        "s16",
+        "s17",
+        "s18",
+        "s19",
+        "s20",
+        "s21",
+        "s22",
+        "s23",
+        "s24",
+        "s25",
+        "s26",
+        "s27",
+        "s28",
+        "s29",
+        "s30",
+        "s31",
+        "s32",
+        "s33",
+        "s34",
+        "s35",
+        "s36",
+        "s37",
+        "s38"
+      ],
+      "color": "#FFADAD",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
     },
     {
-        "id": "tec-1eso",
-        "name": "Tecnología y Dig. 1º ESO",
-        "type": "class",
-        "studentIds": ["s39", "s40", "s41", "s42", "s43", "s44", "s45", "s46", "s47", "s48", "s49", "s50", "s51", "s52", "s53", "s54", "s55", "s56", "s57", "s58", "s59", "s60", "s61", "s62", "s63", "s64"],
-        "color": "#9BF6FF",
-        "startDate": "2025-01-01",
-        "endDate": "2025-12-31"
+      "id": "tec-1eso",
+      "name": "Tecnología y Dig. 1º ESO",
+      "type": "class",
+      "studentIds": [
+        "s39",
+        "s40",
+        "s41",
+        "s42",
+        "s43",
+        "s44",
+        "s45",
+        "s46",
+        "s47",
+        "s48",
+        "s49",
+        "s50",
+        "s51",
+        "s52",
+        "s53",
+        "s54",
+        "s55",
+        "s56",
+        "s57",
+        "s58",
+        "s59",
+        "s60",
+        "s61",
+        "s62",
+        "s63",
+        "s64"
+      ],
+      "color": "#9BF6FF",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31"
     }
   ],
   "students": [
-    {"id": "s1", "name": "Fernández, Lucía", "generalNotes": "Muy buena actitud, siempre pregunta para aclarar dudas."},
-    {"id": "s2", "name": "Jiménez, Marcos", "generalNotes": "Necesita sentarse en primera fila para mantener la concentración."},
-    {"id": "s3", "name": "Moreno, Sara", "generalNotes": ""},
-    {"id": "s4", "name": "Ruiz, Hugo", "generalNotes": "Le cuesta entregar los trabajos a tiempo."},
-    {"id": "s5", "name": "Navarro, Daniela", "generalNotes": "Excelente en resolución de problemas complejos."},
-    {"id": "s6", "name": "Alonso, Pablo", "generalNotes": ""},
-    {"id": "s7", "name": "Torres, Valeria", "generalNotes": "Faltó la semana del 23/09 por enfermedad."},
-    {"id": "s8", "name": "Ramos, Javier", "generalNotes": "Muy creativo con las herramientas digitales."},
-    {"id": "s9", "name": "Gil, Alba", "generalNotes": "A veces se frustra si el software no funciona como espera."},
-    {"id": "s10", "name": "Castillo, Adrián", "generalNotes": ""},
-    {"id": "s11", "name": "Sánchez, Carlos", "generalNotes": "Participa mucho en clase, a veces interrumpiendo."},
-    {"id": "s12", "name": "Gómez, Paula", "generalNotes": "Muy trabajadora y constante. Un pilar para su grupo."},
-    {"id": "s13", "name": "Martín, David", "generalNotes": ""},
-    {"id": "s14", "name": "Rodríguez, Elena", "generalNotes": "Parece desmotivada últimamente. Hablar con ella."},
-    {"id": "s15", "name": "Hernández, Sergio", "generalNotes": "Le cuesta la parte de formulación inorgánica."},
-    {"id": "s16", "name": "Díaz, Laura", "generalNotes": ""},
-    {"id": "s17", "name": "Pérez, Manuel", "generalNotes": "Líder natural, ayuda a sus compañeros con los problemas de física."},
-    {"id": "s18", "name": "Muñoz, Carmen", "generalNotes": "Muy ordenada en su cuaderno y en los trabajos de laboratorio."},
-    {"id": "s19", "name": "Álvarez, Iván", "generalNotes": "Se distrae con facilidad. Probar a cambiarle de sitio."},
-    {"id": "s20", "name": "Romero, Sofía", "generalNotes": ""},
-    {"id": "s21", "name": "Alonso, Francisco", "generalNotes": "Ha mejorado mucho en los últimos exámenes."},
-    {"id": "s22", "name": "Gutiérrez, Marina", "generalNotes": "Tiene dificultades para entender los conceptos abstractos de química."},
-    {"id": "s23", "name": "Vázquez, Jorge", "generalNotes": "Olvida el material de laboratorio con frecuencia."},
-    {"id": "s24", "name": "Morales, Ana", "generalNotes": ""},
-    {"id": "s25", "name": "Domínguez, Alberto", "generalNotes": "Muy bueno en la parte de física, pero no le gusta la química."},
-    {"id": "s26", "name": "Ortega, Marta", "generalNotes": "Pregunta dudas muy pertinentes."},
-    {"id": "s27", "name": "Serrano, Rubén", "generalNotes": ""},
-    {"id": "s28", "name": "Blanco, Cristina", "generalNotes": "Le cuesta trabajar en equipo."},
-    {"id": "s29", "name": "Soto, Diego", "generalNotes": ""},
-    {"id": "s30", "name": "Pastor, Nerea", "generalNotes": "Ha faltado varios días, necesita ponerse al día."},
-    {"id": "s31", "name": "Rivas, Fernando", "generalNotes": ""},
-    {"id": "s32", "name": "Gallego, Irene", "generalNotes": ""},
-    {"id": "s33", "name": "Sanz, Miguel Ángel", "generalNotes": ""},
-    {"id": "s34", "name": "Nuñez, Beatriz", "generalNotes": "Su familia se ha interesado mucho en la última reunión."},
-    {"id": "s35", "name": "Vidal, Adrián", "generalNotes": ""},
-    {"id": "s36", "name": "Campos, Raquel", "generalNotes": ""},
-    {"id": "s37", "name": "Guerrero, Mario", "generalNotes": ""},
-    {"id": "s38", "name": "Peña, Silvia", "generalNotes": ""},
-    {"id": "s39", "name": "Medina, Alejandro", "generalNotes": "Le encanta el diseño 3D."},
-    {"id": "s40", "name": "Vega, Martina", "generalNotes": "Muy meticulosa con las estructuras que construye."},
-    {"id": "s41", "name": "Reyes, Daniel", "generalNotes": ""},
-    {"id": "s42", "name": "Fuentes, Julia", "generalNotes": "A veces se frustra si el diseño no sale a la primera."},
-    {"id": "s43", "name": "Cruz, Álvaro", "generalNotes": "Tiene mucha imaginación para proponer proyectos."},
-    {"id": "s44", "name": "Flores, Emma", "generalNotes": ""},
-    {"id": "s45", "name": "Castro, Antonio", "generalNotes": "Necesita un poco de ayuda con el software de diseño."},
-    {"id": "s46", "name": "Cabrera, Olivia", "generalNotes": ""},
-    {"id": "s47", "name": "Ríos, José Luis", "generalNotes": ""},
-    {"id": "s48", "name": "Pascual, Teresa", "generalNotes": ""},
-    {"id": "s49", "name": "Herrero, Héctor", "generalNotes": ""},
-    {"id": "s50", "name": "Diez, Isabel", "generalNotes": "Muy buena en la fase de planificación de proyectos."},
-    {"id": "s51", "name": "Ferrer, Ricardo", "generalNotes": "Prefiere la parte de montaje que la de diseño."},
-    {"id": "s52", "name": "Giménez, Aitana", "generalNotes": ""},
-    {"id": "s53", "name": "Paredes, Enrique", "generalNotes": ""},
-    {"id": "s54", "name": "Esteban, Verónica", "generalNotes": ""},
-    {"id": "s55", "name": "Montero, Félix", "generalNotes": "Aporta ideas muy originales al grupo."},
-    {"id": "s56", "name": "Arias, Lourdes", "generalNotes": ""},
-    {"id": "s57", "name": "Lorenzo, Víctor", "generalNotes": ""},
-    {"id": "s58", "name": "Santos, Pilar", "generalNotes": ""},
-    {"id": "s59", "name": "Calvo, Guillermo", "generalNotes": ""},
-    {"id": "s60", "name": "Hidalgo, Rocío", "generalNotes": ""},
-    {"id": "s61", "name": "Vicente, Samuel", "generalNotes": ""},
-    {"id": "s62", "name": "Marín, Mercedes", "generalNotes": ""},
-    {"id": "s63", "name": "Navarro, Óscar", "generalNotes": ""},
-    {"id": "s64", "name": "Soler, Elisa", "generalNotes": "Muy buena capacidad de resolución de problemas técnicos."}
+    {
+      "id": "s1",
+      "name": "Fernández, Lucía",
+      "generalNotes": "Muy buena actitud, siempre pregunta para aclarar dudas."
+    },
+    {
+      "id": "s2",
+      "name": "Jiménez, Marcos",
+      "generalNotes": "Necesita sentarse en primera fila para mantener la concentración."
+    },
+    {
+      "id": "s3",
+      "name": "Moreno, Sara",
+      "generalNotes": ""
+    },
+    {
+      "id": "s4",
+      "name": "Ruiz, Hugo",
+      "generalNotes": "Le cuesta entregar los trabajos a tiempo."
+    },
+    {
+      "id": "s5",
+      "name": "Navarro, Daniela",
+      "generalNotes": "Excelente en resolución de problemas complejos."
+    },
+    {
+      "id": "s6",
+      "name": "Alonso, Pablo",
+      "generalNotes": ""
+    },
+    {
+      "id": "s7",
+      "name": "Torres, Valeria",
+      "generalNotes": "Faltó la semana del 23/09 por enfermedad."
+    },
+    {
+      "id": "s8",
+      "name": "Ramos, Javier",
+      "generalNotes": "Muy creativo con las herramientas digitales."
+    },
+    {
+      "id": "s9",
+      "name": "Gil, Alba",
+      "generalNotes": "A veces se frustra si el software no funciona como espera."
+    },
+    {
+      "id": "s10",
+      "name": "Castillo, Adrián",
+      "generalNotes": ""
+    },
+    {
+      "id": "s11",
+      "name": "Sánchez, Carlos",
+      "generalNotes": "Participa mucho en clase, a veces interrumpiendo."
+    },
+    {
+      "id": "s12",
+      "name": "Gómez, Paula",
+      "generalNotes": "Muy trabajadora y constante. Un pilar para su grupo."
+    },
+    {
+      "id": "s13",
+      "name": "Martín, David",
+      "generalNotes": ""
+    },
+    {
+      "id": "s14",
+      "name": "Rodríguez, Elena",
+      "generalNotes": "Parece desmotivada últimamente. Hablar con ella."
+    },
+    {
+      "id": "s15",
+      "name": "Hernández, Sergio",
+      "generalNotes": "Le cuesta la parte de formulación inorgánica."
+    },
+    {
+      "id": "s16",
+      "name": "Díaz, Laura",
+      "generalNotes": ""
+    },
+    {
+      "id": "s17",
+      "name": "Pérez, Manuel",
+      "generalNotes": "Líder natural, ayuda a sus compañeros con los problemas de física."
+    },
+    {
+      "id": "s18",
+      "name": "Muñoz, Carmen",
+      "generalNotes": "Muy ordenada en su cuaderno y en los trabajos de laboratorio."
+    },
+    {
+      "id": "s19",
+      "name": "Álvarez, Iván",
+      "generalNotes": "Se distrae con facilidad. Probar a cambiarle de sitio."
+    },
+    {
+      "id": "s20",
+      "name": "Romero, Sofía",
+      "generalNotes": ""
+    },
+    {
+      "id": "s21",
+      "name": "Alonso, Francisco",
+      "generalNotes": "Ha mejorado mucho en los últimos exámenes."
+    },
+    {
+      "id": "s22",
+      "name": "Gutiérrez, Marina",
+      "generalNotes": "Tiene dificultades para entender los conceptos abstractos de química."
+    },
+    {
+      "id": "s23",
+      "name": "Vázquez, Jorge",
+      "generalNotes": "Olvida el material de laboratorio con frecuencia."
+    },
+    {
+      "id": "s24",
+      "name": "Morales, Ana",
+      "generalNotes": ""
+    },
+    {
+      "id": "s25",
+      "name": "Domínguez, Alberto",
+      "generalNotes": "Muy bueno en la parte de física, pero no le gusta la química."
+    },
+    {
+      "id": "s26",
+      "name": "Ortega, Marta",
+      "generalNotes": "Pregunta dudas muy pertinentes."
+    },
+    {
+      "id": "s27",
+      "name": "Serrano, Rubén",
+      "generalNotes": ""
+    },
+    {
+      "id": "s28",
+      "name": "Blanco, Cristina",
+      "generalNotes": "Le cuesta trabajar en equipo."
+    },
+    {
+      "id": "s29",
+      "name": "Soto, Diego",
+      "generalNotes": ""
+    },
+    {
+      "id": "s30",
+      "name": "Pastor, Nerea",
+      "generalNotes": "Ha faltado varios días, necesita ponerse al día."
+    },
+    {
+      "id": "s31",
+      "name": "Rivas, Fernando",
+      "generalNotes": ""
+    },
+    {
+      "id": "s32",
+      "name": "Gallego, Irene",
+      "generalNotes": ""
+    },
+    {
+      "id": "s33",
+      "name": "Sanz, Miguel Ángel",
+      "generalNotes": ""
+    },
+    {
+      "id": "s34",
+      "name": "Nuñez, Beatriz",
+      "generalNotes": "Su familia se ha interesado mucho en la última reunión."
+    },
+    {
+      "id": "s35",
+      "name": "Vidal, Adrián",
+      "generalNotes": ""
+    },
+    {
+      "id": "s36",
+      "name": "Campos, Raquel",
+      "generalNotes": ""
+    },
+    {
+      "id": "s37",
+      "name": "Guerrero, Mario",
+      "generalNotes": ""
+    },
+    {
+      "id": "s38",
+      "name": "Peña, Silvia",
+      "generalNotes": ""
+    },
+    {
+      "id": "s39",
+      "name": "Medina, Alejandro",
+      "generalNotes": "Le encanta el diseño 3D."
+    },
+    {
+      "id": "s40",
+      "name": "Vega, Martina",
+      "generalNotes": "Muy meticulosa con las estructuras que construye."
+    },
+    {
+      "id": "s41",
+      "name": "Reyes, Daniel",
+      "generalNotes": ""
+    },
+    {
+      "id": "s42",
+      "name": "Fuentes, Julia",
+      "generalNotes": "A veces se frustra si el diseño no sale a la primera."
+    },
+    {
+      "id": "s43",
+      "name": "Cruz, Álvaro",
+      "generalNotes": "Tiene mucha imaginación para proponer proyectos."
+    },
+    {
+      "id": "s44",
+      "name": "Flores, Emma",
+      "generalNotes": ""
+    },
+    {
+      "id": "s45",
+      "name": "Castro, Antonio",
+      "generalNotes": "Necesita un poco de ayuda con el software de diseño."
+    },
+    {
+      "id": "s46",
+      "name": "Cabrera, Olivia",
+      "generalNotes": ""
+    },
+    {
+      "id": "s47",
+      "name": "Ríos, José Luis",
+      "generalNotes": ""
+    },
+    {
+      "id": "s48",
+      "name": "Pascual, Teresa",
+      "generalNotes": ""
+    },
+    {
+      "id": "s49",
+      "name": "Herrero, Héctor",
+      "generalNotes": ""
+    },
+    {
+      "id": "s50",
+      "name": "Diez, Isabel",
+      "generalNotes": "Muy buena en la fase de planificación de proyectos."
+    },
+    {
+      "id": "s51",
+      "name": "Ferrer, Ricardo",
+      "generalNotes": "Prefiere la parte de montaje que la de diseño."
+    },
+    {
+      "id": "s52",
+      "name": "Giménez, Aitana",
+      "generalNotes": ""
+    },
+    {
+      "id": "s53",
+      "name": "Paredes, Enrique",
+      "generalNotes": ""
+    },
+    {
+      "id": "s54",
+      "name": "Esteban, Verónica",
+      "generalNotes": ""
+    },
+    {
+      "id": "s55",
+      "name": "Montero, Félix",
+      "generalNotes": "Aporta ideas muy originales al grupo."
+    },
+    {
+      "id": "s56",
+      "name": "Arias, Lourdes",
+      "generalNotes": ""
+    },
+    {
+      "id": "s57",
+      "name": "Lorenzo, Víctor",
+      "generalNotes": ""
+    },
+    {
+      "id": "s58",
+      "name": "Santos, Pilar",
+      "generalNotes": ""
+    },
+    {
+      "id": "s59",
+      "name": "Calvo, Guillermo",
+      "generalNotes": ""
+    },
+    {
+      "id": "s60",
+      "name": "Hidalgo, Rocío",
+      "generalNotes": ""
+    },
+    {
+      "id": "s61",
+      "name": "Vicente, Samuel",
+      "generalNotes": ""
+    },
+    {
+      "id": "s62",
+      "name": "Marín, Mercedes",
+      "generalNotes": ""
+    },
+    {
+      "id": "s63",
+      "name": "Navarro, Óscar",
+      "generalNotes": ""
+    },
+    {
+      "id": "s64",
+      "name": "Soler, Elisa",
+      "generalNotes": "Muy buena capacidad de resolución de problemas técnicos."
+    }
   ],
   "timeSlots": [
-    {"id": "t1", "label": "08:15-09:10", "order": 0},
-    {"id": "t2", "label": "09:10-10:05", "order": 1},
-    {"id": "t3", "label": "10:05-11:00", "order": 2},
-    {"id": "t4", "label": "11:00-11:30", "order": 3},
-    {"id": "t5", "label": "11:30-12:25", "order": 4},
-    {"id": "t6", "label": "12:25-13:20", "order": 5},
-    {"id": "t7", "label": "13:20-14:15", "order": 6}
+    {
+      "id": "t1",
+      "label": "08:15-09:10",
+      "order": 0
+    },
+    {
+      "id": "t2",
+      "label": "09:10-10:05",
+      "order": 1
+    },
+    {
+      "id": "t3",
+      "label": "10:05-11:00",
+      "order": 2
+    },
+    {
+      "id": "t4",
+      "label": "11:00-11:30",
+      "order": 3
+    },
+    {
+      "id": "t5",
+      "label": "11:30-12:25",
+      "order": 4
+    },
+    {
+      "id": "t6",
+      "label": "12:25-13:20",
+      "order": 5
+    },
+    {
+      "id": "t7",
+      "label": "13:20-14:15",
+      "order": 6
+    }
   ],
   "schedule": {
     "Monday-08:15-09:10": "bio-4eso",
@@ -193,7 +551,7 @@
         "s5": "Daniela ya conocía el tema y ha ayudado a sus compañeros."
       }
     },
-     "fq-3eso_2025-07-14": {
+    "fq-3eso_2025-07-14": {
       "planned": "Introducción a la Química. El átomo. Modelos atómicos (Dalton, Thomson, Rutherford).",
       "completed": "Explicación de los modelos de Dalton y Thomson. Rutherford lo veremos en la próxima clase. Han hecho un esquema comparativo.",
       "annotations": {
@@ -207,7 +565,7 @@
       "completed": "Charla realizada. Se ha generado un debate interesante sobre la gestión del tiempo.",
       "annotations": {}
     },
-     "tec-1eso_2025-07-15": {
+    "tec-1eso_2025-07-15": {
       "planned": "Presentación de la asignatura y normas del taller. Primer proyecto: 'El puente de papel'. Formación de grupos.",
       "completed": "Presentación hecha. Grupos formados. Han empezado a esbozar sus diseños para el puente.",
       "annotations": {
@@ -224,19 +582,30 @@
       }
     },
     "fq-3eso_2025-07-16": {
-        "planned": "Modelo de Rutherford y modelo de Bohr. Partículas subatómicas: protones, neutrones y electrones. Concepto de número atómico y másico.",
-        "completed": "Explicación completada. Han hecho ejercicios para calcular partículas de diferentes elementos.",
-        "annotations": {
-            "s15": "Sergio sigue con dificultades para diferenciar número atómico y másico. Refuerzo.",
-            "s22": "Marina pregunta por qué los electrones no caen al núcleo. Buena pregunta, nos sirve para introducir a Bohr.",
-            "s25": "Alberto dice que esto 'no son mates, pero se parece'. Parece que le empieza a gustar."
-        }
+      "planned": "Modelo de Rutherford y modelo de Bohr. Partículas subatómicas: protones, neutrones y electrones. Concepto de número atómico y másico.",
+      "completed": "Explicación completada. Han hecho ejercicios para calcular partículas de diferentes elementos.",
+      "annotations": {
+        "s15": "Sergio sigue con dificultades para diferenciar número atómico y másico. Refuerzo.",
+        "s22": "Marina pregunta por qué los electrones no caen al núcleo. Buena pregunta, nos sirve para introducir a Bohr.",
+        "s25": "Alberto dice que esto 'no son mates, pero se parece'. Parece que le empieza a gustar."
+      }
     },
     "mat-1bach_2025-07-21": {
-      "planned": "Resolución de triángulos cualesquiera: Teorema del seno y del coseno."
+      "planned": "Resolución de triángulos cualesquiera: Teorema del seno y del coseno.",
+      "completed": "Ejemplos con teorema del seno y coseno. Ejercicios 1-3 resueltos en clase. El resto para casa.",
+      "annotations": {
+        "s6": "Pablo resolvió el ejercicio 2 en la pizarra con seguridad.",
+        "s7": "Valeria ha pedido más ejercicios de práctica para el teorema del coseno."
+      }
     },
     "dig-2eso_2025-07-21": {
-      "planned": "Práctica 2: Creación de un documento de texto con formato avanzado (estilos, tablas de contenido)."
+      "planned": "Práctica 2: Creación de un documento de texto con formato avanzado (estilos, tablas de contenido).",
+      "completed": "Documento creado con estilos y tabla de contenido. Han exportado a PDF.",
+      "annotations": {
+        "s8": "Javier ha añadido encabezados personalizados correctamente.",
+        "s9": "Alba se ha bloqueado con la tabla de contenido; necesita repaso.",
+        "s10": "Adrián terminó rápido y ayudó a Alba."
+      }
     },
     "tec-1eso_2025-07-22": {
       "planned": "Proyecto 'Puente de papel': Fase de construcción. Recordar las limitaciones de material.",
@@ -248,7 +617,13 @@
       }
     },
     "bio-4eso_2025-07-23": {
-      "planned": "Explicar la codominancia y los grupos sanguíneos como ejemplo. Problemas de herencia de grupos sanguíneos."
+      "planned": "Explicar la codominancia y los grupos sanguíneos como ejemplo. Problemas de herencia de grupos sanguíneos.",
+      "completed": "Ejemplos de grupos sanguíneos con herencia codominante. Problemas 1-5 iniciados.",
+      "annotations": {
+        "s1": "Lucía relaciona alelos IA, IB, i con facilidad.",
+        "s3": "Sara participa activamente proponiendo ejemplos.",
+        "s4": "Hugo todavía confunde IA con IB; reforzar."
+      }
     },
     "fq-3eso_2025-07-23": {
       "planned": "Práctica de laboratorio 1: 'Separación de mezclas'. Uso de material de laboratorio (vasos de precipitados, probetas, embudos).",
@@ -261,16 +636,55 @@
       }
     },
     "mat-1bach_2025-07-28": {
-      "planned": "Ejercicios de repaso de trigonometría. Hoja de problemas para preparar el examen."
+      "planned": "Ejercicios de repaso de trigonometría. Hoja de problemas para preparar el examen.",
+      "completed": "Repaso realizado. Hoja de problemas entregada. Examen programado.",
+      "annotations": {
+        "s5": "Daniela lidera la resolución de problemas en su grupo.",
+        "s6": "Pablo necesita memorizar fórmulas trigonométricas."
+      }
     },
     "bio-4eso_2025-07-30": {
-      "planned": "Repaso general de genética. Sesión de dudas antes del examen."
+      "planned": "Repaso general de genética. Sesión de dudas antes del examen.",
+      "completed": "Sesión de dudas productiva. Resuelto un problema de genética inversa.",
+      "annotations": {
+        "s2": "Marcos mejoró en terminología tras un miniquiz.",
+        "s3": "Sara explicó a los compañeros el concepto de epistasis."
+      }
     },
     "dig-2eso_2025-08-04": {
-      "planned": "Introducción a las hojas de cálculo. Fórmulas básicas y referencias a celdas."
+      "planned": "Introducción a las hojas de cálculo. Fórmulas básicas y referencias a celdas.",
+      "completed": "Introducción hecha. Han creado hojas simples con fórmulas SUMA y PROMEDIO.",
+      "annotations": {
+        "s8": "Javier experimentó con formato condicional.",
+        "s9": "Alba copia fórmulas sin entender referencias relativas.",
+        "s10": "Adrián probó referencias absolutas con $."
+      }
     },
     "mat-1bach_2025-08-04": {
-      "planned": "Examen del Tema 2: Trigonometría."
+      "planned": "Examen del Tema 2: Trigonometría.",
+      "completed": "Examen realizado sin incidencias. Corrección prevista para próxima clase.",
+      "annotations": {
+        "s5": "Daniela terminó con 15 minutos de sobra.",
+        "s7": "Valeria solicitó más tiempo; observar ritmo en futuros exámenes."
+      }
+    },
+    "fq-3eso_2025-07-28": {
+      "planned": "Ejercicios sobre número atómico y másico. Tabla periódica simplificada.",
+      "completed": "Ejercicios 1-4 completados. Han coloreado su tabla.",
+      "annotations": {
+        "s12": "Paula destacó explicando a sus compañeros el concepto de isótopo.",
+        "s19": "Iván ha mejorado su actitud, menos interrupciones.",
+        "s22": "Marina sigue con dudas sobre isótopos; revisar."
+      }
+    },
+    "tec-1eso_2025-07-29": {
+      "planned": "Diseño asistido por ordenador: SketchUp básico. Crear un cubo y aplicarle texturas.",
+      "completed": "Todos crearon cubos texturizados y los giraron en 3D.",
+      "annotations": {
+        "s39": "Alejandro añadió detalles extra sin que se lo pidieran.",
+        "s42": "Julia realizó todas las operaciones correctamente y ganó confianza.",
+        "s55": "Félix diseñó un cubo hueco mostrando curiosidad por estructuras internas."
+      }
     }
   },
   "courseStartDate": "2025-01-01",
