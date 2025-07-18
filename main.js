@@ -67,7 +67,7 @@ function handleAction(action, element, event) {
         'save-timeslot', 'cancel-edit-timeslot', 'edit-activity', 'save-activity',
         'cancel-edit-activity', 'prev-week', 'next-week', 'today', 'select-student', 'back-to-classes',
         'add-selected-student-to-class', 'navigate-to-session', 'add-schedule-override', 'delete-schedule-override',
-        'go-to-class-session'
+        'go-to-class-session', 'add-term', 'delete-term', 'select-term' // Acciones de trimestres
     ];
     
     if (actionHandlers[action]) {
@@ -93,9 +93,7 @@ function attachEventListeners() {
         
         if (el.dataset.listenerAttached === 'true') return;
         
-        // --- INICIO DE LA CORRECCIÓN: No se añade listener al label ---
         if (action === 'import-data-mobile') return;
-        // --- FIN DE LA CORRECCIÓN ---
 
         const listener = (e) => {
              if (el.closest('.nav-button')) {
@@ -114,13 +112,11 @@ function attachEventListeners() {
         importInput.dataset.listenerAttached = 'true';
     }
     
-    // --- INICIO DE LA CORRECCIÓN: Se añade el listener directamente al input móvil ---
     const mobileImportInput = document.getElementById('import-file-input-mobile');
     if (mobileImportInput && mobileImportInput.dataset.listenerAttached !== 'true') {
         mobileImportInput.addEventListener('change', (e) => handleAction('import-data', mobileImportInput, e));
         mobileImportInput.dataset.listenerAttached = 'true';
     }
-    // --- FIN DE LA CORRECCIÓN ---
 }
 
 
