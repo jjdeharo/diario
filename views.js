@@ -515,6 +515,19 @@ export function renderSettingsView() {
             <div class="grid lg:grid-cols-2 gap-8 items-start">
                 <div class="space-y-8">
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold mb-3">${t('course_dates_title')}</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('start_date')}</label>
+                                <input type="date" data-action="update-course-date" data-type="start" value="${state.courseStartDate}" class="mt-1 w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">${t('end_date')}</label>
+                                <input type="date" data-action="update-course-date" data-type="end" value="${state.courseEndDate}" class="mt-1 w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <h3 class="text-lg font-semibold mb-3">${t('terms_management_title')}</h3>
                         <div class="space-y-4 p-4 border border-dashed dark:border-gray-600 rounded-md">
                             <input type="text" id="new-term-name" placeholder="${t('term_name_placeholder')}" class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md">
