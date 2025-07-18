@@ -656,7 +656,6 @@ export function renderSettingsView() {
                     <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 p-4 rounded-r-lg">
                         <h3 class="text-lg font-semibold text-red-800 dark:text-red-300 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5"></i> ${t('danger_zone_title')}</h3>
                         <div class="mt-4 space-y-2">
-                            <button data-action="export-schedule" class="w-full bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 flex items-center justify-center gap-2"><i data-lucide="file-export" class="w-5 h-5"></i> ${t('export_schedule')}</button>
                             <label class="w-full bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 flex items-center justify-center gap-2 cursor-pointer">
                                 <i data-lucide="file-import" class="w-5 h-5"></i>
                                 <span>${t('import_schedule')}</span>
