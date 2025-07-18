@@ -164,4 +164,10 @@
   "manual_data_delete_title": "Delete all data",
   "manual_data_delete_p1_new": "In the \"Danger Zone\" on the <strong>Settings</strong> page, you can permanently delete all application data. This action cannot be undone, so use it with caution.",
   "quick_nav_to_class": "Quick navigation to class..."
+  "import_summary_title": "Import Summary",
+  "import_summary_activities": "Activities",
+  "import_summary_students": "Students",
+  "import_summary_timeslots": "Time Slots",
+  "import_summary_entries": "Schedule Entries",
+  "modal_close": "Close"
 }
