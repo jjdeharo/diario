@@ -68,7 +68,7 @@ function handleAction(action, element, event) {
         'cancel-edit-activity', 'prev-week', 'next-week', 'today', 'select-student', 'back-to-classes',
         'add-selected-student-to-class', 'navigate-to-session', 'add-schedule-override', 'delete-schedule-override',
         'go-to-class-session', 'add-term', 'delete-term', 'select-term', 'go-to-week',
-        'add-holiday', 'delete-holiday' // Añadimos las nuevas acciones
+        'add-holiday', 'delete-holiday', 'select-settings-tab' // FIX: Added action to re-render
     ];
     
     if (actionHandlers[action]) {
