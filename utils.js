@@ -157,7 +157,7 @@ export function showModal(title, content, onConfirm) {
 }
 
 // --- Nueva función para modales de información ---
-export function showInfoModal(title, htmlContent) {
+export function showInfoModal(title, htmlContent, onClose) {
     const modalContainer = document.getElementById('modal-container');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -166,10 +166,14 @@ export function showInfoModal(title, htmlContent) {
     modalTitle.textContent = title;
     modalBody.innerHTML = `${htmlContent}
         <div class="flex justify-end gap-4 mt-6">
-            <button id="modal-info-close" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">${t('modal_cancel')}</button>
+            <button id="modal-info-close" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">${t('modal_close')}</button>
         </div>`;
     
-    const close = () => modalContainer.classList.add('hidden');
+    const close = () => {
+        modalContainer.classList.add('hidden');
+        if (onClose) onClose();
+    };
+
     modalContainer.classList.remove('hidden');
     
     document.getElementById('modal-info-close').onclick = close;
