@@ -1,7 +1,7 @@
 // i18n.js: Módulo para gestionar la internacionalización
 
 let translations = {};
-const supportedLangs = ['es', 'ca', 'en'];
+const supportedLangs = ['es', 'ca', 'en', 'gl', 'eu'];
 let renderCallback = () => {}; // Callback para re-renderizar la UI cuando cambia el idioma
 
 /**
