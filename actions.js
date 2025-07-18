@@ -33,6 +33,21 @@ export const actionHandlers = {
         });
     },
 
+    'go-to-class-card': (id, element) => {
+        const activityId = element.value;
+        if (activityId) {
+            const card = document.getElementById(`class-card-${activityId}`);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Add a temporary highlight effect for better user feedback
+                card.style.transition = 'outline 0.1s ease-in-out';
+                card.style.outline = '3px solid #3b82f6'; // blue-600
+                setTimeout(() => {
+                    card.style.outline = 'none';
+                }, 1500);
+            }
+        }
+    },
     // --- Student Actions ---
     'add-student-to-class': (id, element) => {
         const activityId = element.dataset.activityId;
