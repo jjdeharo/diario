@@ -206,3 +206,34 @@ export function showInfoModal(title, htmlContent, onClose) {
     document.getElementById('modal-info-close').onclick = close;
     modalCloseBtn.onclick = close;
 }
+
+export function getWeeksForCourse() {
+    if (!state.courseStartDate || !state.courseEndDate) {
+        return [];
+    }
+
+    const weeks = [];
+    let currentDate = getWeekStartDate(new Date(state.courseStartDate + 'T12:00:00'));
+    const endDate = new Date(state.courseEndDate + 'T12:00:00');
+    const lang = document.documentElement.lang || 'es';
+
+    while (currentDate <= endDate) {
+        const startOfWeek = new Date(currentDate);
+        const endOfWeek = new Date(startOfWeek);
+        endOfWeek.setDate(startOfWeek.getDate() + 4);
+        
+        const displayEndOfWeek = new Date(Math.min(endOfWeek, endDate));
+
+        const options = { month: 'short', day: 'numeric' };
+        const weekText = `${startOfWeek.toLocaleDateString(lang, options)} - ${displayEndOfWeek.toLocaleDateString(lang, {...options, year: 'numeric'})}`;
+        
+        weeks.push({
+            date: formatDate(startOfWeek), // Formato YYYY-MM-DD
+            text: weekText
+        });
+
+        currentDate.setDate(currentDate.getDate() + 7);
+    }
+
+    return weeks;
+}
