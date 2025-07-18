@@ -385,6 +385,258 @@
       "color": "#9BF6FF",
       "startDate": "2025-01-01",
       "endDate": "2025-12-31"
+    },
+    {
+      "id": "eco-1bach",
+      "name": "Economía 1º Bach",
+      "type": "class",
+      "color": "#FF9CEE",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "studentIds": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s11",
+        "s12"
+      ],
+      "students": [
+        {
+          "id": "s1",
+          "name": "Fernández, Lucía",
+          "generalNotes": "Muy buena actitud, siempre pregunta para aclarar dudas."
+        },
+        {
+          "id": "s2",
+          "name": "Jiménez, Marcos",
+          "generalNotes": "Necesita sentarse en primera fila para mantener la concentración."
+        },
+        {
+          "id": "s3",
+          "name": "Moreno, Sara",
+          "generalNotes": ""
+        },
+        {
+          "id": "s4",
+          "name": "Ruiz, Hugo",
+          "generalNotes": "Le cuesta entregar los trabajos a tiempo."
+        },
+        {
+          "id": "s5",
+          "name": "Navarro, Daniela",
+          "generalNotes": "Excelente en resolución de problemas complejos."
+        },
+        {
+          "id": "s6",
+          "name": "Alonso, Pablo",
+          "generalNotes": ""
+        },
+        {
+          "id": "s7",
+          "name": "Torres, Valeria",
+          "generalNotes": "Faltó la semana del 23/09 por enfermedad."
+        },
+        {
+          "id": "s8",
+          "name": "Ramos, Javier",
+          "generalNotes": "Muy creativo con las herramientas digitales."
+        },
+        {
+          "id": "s9",
+          "name": "Gil, Alba",
+          "generalNotes": "A veces se frustra si el software no funciona como espera."
+        },
+        {
+          "id": "s10",
+          "name": "Castillo, Adrián",
+          "generalNotes": ""
+        },
+        {
+          "id": "s11",
+          "name": "Sánchez, Carlos",
+          "generalNotes": "Participa mucho en clase, a veces interrumpiendo."
+        },
+        {
+          "id": "s12",
+          "name": "Gómez, Paula",
+          "generalNotes": "Muy trabajadora y constante. Un pilar para su grupo."
+        }
+      ]
+    },
+    {
+      "id": "his-2eso",
+      "name": "Historia 2º ESO",
+      "type": "class",
+      "color": "#BDE0FE",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "studentIds": [
+        "s13",
+        "s14",
+        "s15",
+        "s16",
+        "s17",
+        "s18",
+        "s19",
+        "s20",
+        "s21",
+        "s22",
+        "s23",
+        "s24"
+      ],
+      "students": [
+        {
+          "id": "s13",
+          "name": "Martín, David",
+          "generalNotes": ""
+        },
+        {
+          "id": "s14",
+          "name": "Rodríguez, Elena",
+          "generalNotes": "Parece desmotivada últimamente. Hablar con ella."
+        },
+        {
+          "id": "s15",
+          "name": "Hernández, Sergio",
+          "generalNotes": "Le cuesta la parte de formulación inorgánica."
+        },
+        {
+          "id": "s16",
+          "name": "Díaz, Laura",
+          "generalNotes": ""
+        },
+        {
+          "id": "s17",
+          "name": "Pérez, Manuel",
+          "generalNotes": "Líder natural, ayuda a sus compañeros con los problemas de física."
+        },
+        {
+          "id": "s18",
+          "name": "Muñoz, Carmen",
+          "generalNotes": "Muy ordenada en su cuaderno y en los trabajos de laboratorio."
+        },
+        {
+          "id": "s19",
+          "name": "Álvarez, Iván",
+          "generalNotes": "Se distrae con facilidad. Probar a cambiarle de sitio."
+        },
+        {
+          "id": "s20",
+          "name": "Romero, Sofía",
+          "generalNotes": ""
+        },
+        {
+          "id": "s21",
+          "name": "Alonso, Francisco",
+          "generalNotes": "Ha mejorado mucho en los últimos exámenes."
+        },
+        {
+          "id": "s22",
+          "name": "Gutiérrez, Marina",
+          "generalNotes": "Tiene dificultades para entender los conceptos abstractos de química."
+        },
+        {
+          "id": "s23",
+          "name": "Vázquez, Jorge",
+          "generalNotes": "Olvida el material de laboratorio con frecuencia."
+        },
+        {
+          "id": "s24",
+          "name": "Morales, Ana",
+          "generalNotes": ""
+        }
+      ]
+    },
+    {
+      "id": "fis-2bach",
+      "name": "Física 2º Bach",
+      "type": "class",
+      "color": "#FDFFB6",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "studentIds": [
+        "s25",
+        "s26",
+        "s27",
+        "s28",
+        "s29",
+        "s30",
+        "s31",
+        "s32",
+        "s33",
+        "s34",
+        "s35",
+        "s36"
+      ],
+      "students": [
+        {
+          "id": "s25",
+          "name": "Domínguez, Alberto",
+          "generalNotes": "Muy bueno en la parte de física, pero no le gusta la química."
+        },
+        {
+          "id": "s26",
+          "name": "Ortega, Marta",
+          "generalNotes": "Pregunta dudas muy pertinentes."
+        },
+        {
+          "id": "s27",
+          "name": "Serrano, Rubén",
+          "generalNotes": ""
+        },
+        {
+          "id": "s28",
+          "name": "Blanco, Cristina",
+          "generalNotes": "Le cuesta trabajar en equipo."
+        },
+        {
+          "id": "s29",
+          "name": "Soto, Diego",
+          "generalNotes": ""
+        },
+        {
+          "id": "s30",
+          "name": "Pastor, Nerea",
+          "generalNotes": "Ha faltado varios días, necesita ponerse al día."
+        },
+        {
+          "id": "s31",
+          "name": "Rivas, Fernando",
+          "generalNotes": ""
+        },
+        {
+          "id": "s32",
+          "name": "Gallego, Irene",
+          "generalNotes": ""
+        },
+        {
+          "id": "s33",
+          "name": "Sanz, Miguel Ángel",
+          "generalNotes": ""
+        },
+        {
+          "id": "s34",
+          "name": "Nuñez, Beatriz",
+          "generalNotes": "Su familia se ha interesado mucho en la última reunión."
+        },
+        {
+          "id": "s35",
+          "name": "Vidal, Adrián",
+          "generalNotes": ""
+        },
+        {
+          "id": "s36",
+          "name": "Campos, Raquel",
+          "generalNotes": ""
+        }
+      ]
     }
   ],
   "students": [
@@ -744,6 +996,16 @@
       "id": "t7",
       "label": "13:30-14:30",
       "order": 6
+    },
+    {
+      "id": "t1",
+      "label": "15:00-16:00",
+      "order": 7
+    },
+    {
+      "id": "t2",
+      "label": "16:00-17:00",
+      "order": 8
     }
   ],
   "schedule": {
@@ -772,7 +1034,17 @@
     "Friday-09:00-10:00": "fq-3eso",
     "Friday-10:00-11:00": "bio-4eso",
     "Friday-11:30-12:30": "dig-2eso",
-    "Friday-12:30-13:30": "tec-1eso"
+    "Friday-12:30-13:30": "tec-1eso",
+    "Thursday-15:00-16:00": "eco-1bach",
+    "Thursday-16:00-17:00": "fis-2bach",
+    "Wednesday-15:00-16:00": "fis-2bach",
+    "Wednesday-16:00-17:00": "fis-2bach",
+    "Tuesday-15:00-16:00": "his-2eso",
+    "Tuesday-16:00-17:00": "his-2eso",
+    "Monday-15:00-16:00": "eco-1bach",
+    "Monday-16:00-17:00": "eco-1bach",
+    "Friday-15:00-16:00": "his-2eso",
+    "Friday-16:00-17:00": "fis-2bach"
   },
   "scheduleOverrides": [],
   "classEntries": {
@@ -924,6 +1196,30 @@
         "s39": "Alejandro añadió detalles extra sin que se lo pidieran.",
         "s42": "Julia realizó todas las operaciones correctamente y ganó confianza.",
         "s55": "Félix diseñó un cubo hueco mostrando curiosidad por estructuras internas."
+      }
+    },
+    "eco-1bach_2025-09-15": {
+      "planned": "Inflación y tipos de interés: casos prácticos.",
+      "completed": "Vimos dos ejemplos reales y resolvimos las actividades propuestas.",
+      "annotations": {
+        "s1": "Participa activamente.",
+        "s3": "Necesita ejemplos adicionales."
+      }
+    },
+    "his-2eso_2025-09-15": {
+      "planned": "La Ilustración: figuras principales y su impacto.",
+      "completed": "Los alumnos elaboraron una línea de tiempo colaborativa.",
+      "annotations": {
+        "s15": "Aporta datos precisos.",
+        "s20": "Debe estructurar mejor la información."
+      }
+    },
+    "fis-2bach_2025-09-15": {
+      "planned": "Movimiento circular uniforme; problemas tipo PAU.",
+      "completed": "Se resolvieron tres ejercicios representativos.",
+      "annotations": {
+        "s25": "Domina la parte teórica.",
+        "s30": "Tiene dificultades con el concepto de aceleración centrípeta."
       }
     }
   },
