@@ -151,4 +151,13 @@ input[type=number] {
         line-height: 1.2 !important;
         height: 100% !important;
     }
+    
+    /* CAMBIOS AÑADIDOS */
+    #printable-schedule thead {
+        display: none !important;
+    }
+
+    #printable-schedule button span.absolute {
+        display: none !important;
+    }
 }
