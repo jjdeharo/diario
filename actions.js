@@ -542,6 +542,7 @@ export const actionHandlers = {
             courseEndDate: state.courseEndDate,
             terms: state.terms,
             selectedTermId: state.selectedTermId,
+            holidays: state.holidays
         }, null, 2);
         const blob = new Blob([dataStr], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
@@ -569,6 +570,7 @@ export const actionHandlers = {
                     state.courseEndDate = data.courseEndDate || '';
                     state.terms = data.terms || [];
                     state.selectedTermId = data.selectedTermId || 'all';
+                    state.holidays = data.holidays || [];
                     saveState();
                     showImportSummary(data);
                 } catch (error) {
@@ -652,6 +654,32 @@ export const actionHandlers = {
         if (state.selectedTermId === id) {
             state.selectedTermId = 'all';
         }
+        saveState();
+    },
+    // --- Holiday Actions ---
+    'add-holiday': () => {
+        const nameInput = document.getElementById('new-holiday-name');
+        const startInput = document.getElementById('new-holiday-start');
+        const endInput = document.getElementById('new-holiday-end');
+
+        if (nameInput.value.trim() && startInput.value) {
+            state.holidays.push({
+                id: crypto.randomUUID(),
+                name: nameInput.value.trim(),
+                startDate: startInput.value,
+                endDate: endInput.value || startInput.value // Si no hay fecha de fin, es un solo día
+            });
+            nameInput.value = '';
+            startInput.value = '';
+            endInput.value = '';
+            saveState();
+        } else {
+            alert('Por favor, introduce al menos un nombre y una fecha de inicio para el festivo.');
+        }
+    },
+
+    'delete-holiday': (id) => {
+        state.holidays = state.holidays.filter(holiday => holiday.id !== id);
         saveState();
     },
     'select-term': (id, element) => {
