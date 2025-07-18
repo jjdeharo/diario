@@ -146,22 +146,31 @@ export const actionHandlers = {
         if (!student) return;
 
         const enrolledClasses = state.activities.filter(a => a.type === 'class' && a.studentIds?.includes(student.id));
-        const studentAnnotations = Object.entries(state.classEntries)
-            .map(([entryId, entryData]) => {
-                const annotation = entryData.annotations?.[student.id];
-                if (annotation && annotation.trim() !== '') {
-                    const [activityId, date] = entryId.split('_');
-                    const activity = state.activities.find(a => a.id === activityId);
-                    return {
-                        date,
-                        activityName: activity ? activity.name : 'Clase eliminada',
-                        annotation
+        
+        const annotationsByClass = Object.entries(state.classEntries).reduce((acc, [entryId, entryData]) => {
+            const annotation = entryData.annotations?.[student.id];
+            if (annotation && annotation.trim() !== '') {
+                const [activityId, date] = entryId.split('_');
+                const activity = state.activities.find(a => a.id === activityId);
+
+                if (!acc[activityId]) {
+                    acc[activityId] = {
+                        name: activity ? activity.name : 'Clase eliminada',
+                        annotations: []
                     };
                 }
-                return null;
-            })
-            .filter(Boolean)
-            .sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                acc[activityId].annotations.push({
+                    date,
+                    annotation
+                });
+            }
+            return acc;
+        }, {});
+
+        for (const activityId in annotationsByClass) {
+            annotationsByClass[activityId].annotations.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
 
         const doc = new docx.Document({
             sections: [{
@@ -215,19 +224,34 @@ export const actionHandlers = {
                             }),
                         ],
                     }),
-                    ...studentAnnotations.flatMap(item => [
+                    ...Object.values(annotationsByClass).sort((a,b) => a.name.localeCompare(b.name)).flatMap(classData => [
+                        new docx.Paragraph({ text: "" }),
                         new docx.Paragraph({
                             children: [
                                 new docx.TextRun({
-                                    text: `${item.activityName} - ${new Date(item.date + 'T00:00:00').toLocaleDateString(document.documentElement.lang, { year: 'numeric', month: 'long', day: 'numeric' })}`,
+                                    text: classData.name,
                                     bold: true,
+                                    underline: true,
+                                    size: 20
                                 }),
                             ],
                         }),
-                        new docx.Paragraph({
-                            text: item.annotation,
-                        }),
-                        new docx.Paragraph({ text: "" }),
+                        ...classData.annotations.flatMap(item => [
+                           new docx.Paragraph({
+                                children: [
+                                    new docx.TextRun({
+                                        text: new Date(item.date + 'T00:00:00').toLocaleDateString(document.documentElement.lang, { year: 'numeric', month: 'long', day: 'numeric' }),
+                                        italics: true,
+                                        color: "888888"
+                                    }),
+                                ],
+                            }),
+                            new docx.Paragraph({
+                                text: item.annotation,
+                                indentation: { left: 400 }
+                            }),
+                            new docx.Paragraph({ text: "" }),
+                        ])
                     ])
                 ],
             }],
