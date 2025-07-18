@@ -578,25 +578,6 @@ export const actionHandlers = {
             reader.readAsText(file);
         });
     },
-    'export-schedule': () => {
-        const scheduleData = {
-            activities: state.activities.map(({ studentIds, ...rest }) => rest),
-            timeSlots: state.timeSlots,
-            schedule: state.schedule,
-            scheduleOverrides: state.scheduleOverrides,
-            courseStartDate: state.courseStartDate,
-            courseEndDate: state.courseEndDate,
-            terms: state.terms,
-        };
-        const dataStr = JSON.stringify(scheduleData, null, 2);
-        const blob = new Blob([dataStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `diario-clase-horario-${new Date().toISOString().split('T')[0]}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-    },
     'import-schedule': (id, element, event) => {
         const file = event.target.files[0];
         if (!file) return;
