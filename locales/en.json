@@ -152,7 +152,7 @@
   "manual_settings_data_title": "Data Tab",
   "manual_settings_data_p1": "This section contains sensitive options for managing all your data.",
   "manual_data_delete_title": "Danger Zone",
-  "manual_data_delete_p1_new": "In the \"Danger Zone\" of the <strong>Settings</strong> page, you can permanently delete all application data. This action cannot be undone, so use it with caution.<br><br>The <strong>Import schedule only</strong> button allows you to recover only the timetable from previously saved data. All other data (subjects, students, and notes) will be lost."
+  "manual_data_delete_p1_new": "In the \"Danger Zone\" of the <strong>Settings</strong> page, you can permanently delete all application data. This action cannot be undone, so use it with caution.<br><br>The <strong>Import schedule only</strong> button allows you to recover only the timetable from previously saved data. All other data (subjects, students, and notes) will be lost.",
   "manual_schedule_usage_title": "Using the Schedule",
   "manual_schedule_usage_p1": "The <strong>Schedule</strong> view is your daily hub.",
   "manual_schedule_usage_li1": "<strong>Navigation:</strong> Use the arrows to move between weeks, the \"Today\" button to return to the current week, or click on the date to display a selector and jump to any week of the course.",
