@@ -33,7 +33,24 @@ export const actionHandlers = {
     'load-example': () => {
         showModal(t('import_data_confirm_title'), t('import_data_confirm_text'), async () => {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/ejemplo.json');
+                // --- INICIO DEL CÓDIGO MODIFICADO ---
+
+                // 1. Obtener el idioma actual de la etiqueta <html lang="...">
+                const lang = document.documentElement.lang || 'es';
+
+                // 2. Construir la URL del archivo JSON para el idioma detectado.
+                const url = `https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/demo/${lang}.json`;
+                
+                let response = await fetch(url);
+
+                // 3. Si el archivo del idioma específico no se encuentra, intentar cargar el de español como alternativa.
+                if (!response.ok) {
+                    console.warn(`No se pudo cargar ${url}, se usará la versión en español.`);
+                    response = await fetch('https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/demo/es.json');
+                }
+
+                // --- FIN DEL CÓDIGO MODIFICADO ---
+
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
