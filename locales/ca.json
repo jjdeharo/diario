@@ -109,7 +109,7 @@
   "privacy_p2": "<strong>Emmagatzematge de dades:</strong> Tota la informació que introdueixes (horaris, classes, noms d'estudiants, anotacions, etc.) es desa exclusivament a l'emmagatzematge local (LocalStorage) del teu navegador web, al teu propi ordinador. Cap dada s'envia a cap servidor extern.",
   "privacy_p3": "<strong>Còpies de seguretat:</strong> Quan fas servir la funció \"Desa\", es genera un fitxer <code>.json</code> que es descarrega al teu ordinador. Aquest fitxer conté totes les teves dades i ets l'únic responsable de la seva custòdia. En fer servir \"Obre\", les dades d'aquest fitxer reemplacen les que estan desades al navegador.",
   "privacy_p4": "<strong>Dades de menors:</strong> L'aplicació pot contenir dades de menors (noms i anotacions). És la teva responsabilitat com a usuari/ària complir amb la normativa de protecció de dades vigent al teu país o regió respecte a la gestió d'aquesta informació.",
-  "privacy_p5": "En resum: les teves dades són teves, es queden al teu dispositiu i mai no en surten tret que tu decideixis exportar-les.",
+  "privacy_p5": "Les teves dades són teves, es queden al teu dispositiu i mai no en surten tret que tu decideixis exportar-les.",
   "manual_back_to_app": "Torna a l'App",
   "manual_nav_getting_started": "Primers Passos",
   "manual_nav_settings": "Configuració",
