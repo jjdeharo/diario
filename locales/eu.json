@@ -109,7 +109,7 @@
   "privacy_p2": "<strong>Datuen biltegiratzea:</strong> Sartzen duzun informazio guztia (ordutegiak, klaseak, ikasleen izenak, oharrak, etab.) zure web arakatzailearen tokiko biltegiratzean (LocalStorage) gordetzen da soilik, zure ordenagailuan. Ez da daturik bidaltzen kanpoko zerbitzari batera.",
   "privacy_p3": "<strong>Segurtasun kopiak:</strong> \"Gorde\" funtzioa erabiltzen duzunean, <code>.json</code> fitxategi bat sortzen da eta zure ordenagailuan deskargatzen da. Fitxategi honek zure datu guztiak ditu, eta zu zara hori zaintzearen arduradun bakarra. \"Ireki\" erabiltzean, fitxategi horretako datuek arakatzailean gordetakoak ordezkatzen dituzte.",
   "privacy_p4": "<strong>Adingabeen datuak:</strong> Aplikazioak adingabeen datuak (izenak eta oharrak) izan ditzake. Zure ardura da, erabiltzaile gisa, zure herrialdean edo eskualdean indarrean dagoen datuen babeserako araudia betetzea informazio horren kudeaketari dagokionez.",
-  "privacy_p5": "Laburbilduz: zure datuak zureak dira, zure gailuan geratzen dira eta ez dira inoiz ateratzen zuk esportatzea erabakitzen ez baduzu behintzat.",
+  "privacy_p5": "Zure datuak zureak dira, zure gailuan geratzen dira eta ez dira inoiz ateratzen zuk esportatzea erabakitzen ez baduzu behintzat.",
   "manual_back_to_app": "Itzuli aplikaziora",
   "manual_nav_getting_started": "Lehen urratsak",
   "manual_nav_settings": "Ezarpenak",
