@@ -1,38 +1,29 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+name: "🐛 Informar de un error"
+about: "Para informar de un error de funcionamiento."
+title: "[ERROR] "
+labels: ["bug"]
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Describe el error**
+Una descripción clara y concisa de cuál es el problema.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Para reproducirlo**
+Pasos para reproducir el comportamiento:
+1. Ir a '...'
+2. Hacer clic en '....'
+3. Bajar hasta '....'
+4. Ver el error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Comportamiento esperado**
+Una descripción clara y concisa de lo que esperabas que sucediera.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Capturas de pantalla (opcional)**
+Si es posible, añade capturas de pantalla para ayudar a explicar tu problema.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**Entorno:**
+ - Dispositivo: [Ej: PC, Móvil]
+ - Sistema Operativo: [Ej: Windows 10, Android 12]
+ - Navegador: [Ej: Chrome, Firefox]
