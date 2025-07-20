@@ -39,14 +39,14 @@ export const actionHandlers = {
                 const lang = document.documentElement.lang || 'es';
 
                 // 2. Construir la URL del archivo JSON para el idioma detectado.
-                const url = `https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/demo/${lang}.json`;
+                const url = `https://raw.githubusercontent.com/jjdeharo/gist/refs/heads/main/diario/demo/${lang}.json`;
                 
                 let response = await fetch(url);
 
                 // 3. Si el archivo del idioma específico no se encuentra, intentar cargar el de español como alternativa.
                 if (!response.ok) {
                     console.warn(`No se pudo cargar ${url}, se usará la versión en español.`);
-                    response = await fetch('https://raw.githubusercontent.com/jjdeharo/diario/refs/heads/main/demo/es.json');
+                    response = await fetch('https://raw.githubusercontent.com/jjdeharo/gist/refs/heads/main/diario/demo/es.json');
                 }
 
                 // --- FIN DEL CÓDIGO MODIFICADO ---
