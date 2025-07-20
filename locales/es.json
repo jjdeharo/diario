@@ -109,7 +109,7 @@
   "privacy_p2": "<strong>Almacenamiento de datos:</strong> Toda la información que introduces (horarios, clases, nombres de estudiantes, anotaciones, etc.) se guarda exclusivamente en el almacenamiento local (LocalStorage) de tu navegador web, en tu propio ordenador. Ningún dato se envía a ningún servidor externo.",
   "privacy_p3": "<strong>Copias de seguridad:</strong> Cuando usas la función \"Guardar\", se genera un fichero <code>.json</code> que se descarga en tu ordenador. Este fichero contiene todos tus datos y eres el único responsable de su custodia. Al usar \"Abrir\", los datos de ese fichero reemplazan los que están guardados en el navegador.",
   "privacy_p4": "<strong>Datos de menores:</strong> La aplicación puede contener datos de menores (nombres y anotaciones). Es tu responsabilidad como usuario/a cumplir con la normativa de protección de datos vigente en tu país o región respecto a la gestión de esta información.",
-  "privacy_p5": "En resumen: tus datos son tuyos, se quedan en tu dispositivo y nunca salen de él a menos que tú decidas exportarlos.",
+  "privacy_p5": "Tus datos son tuyos, se quedan en tu dispositivo y nunca salen de él a menos que tú decidas exportarlos.",
   "manual_back_to_app": "Volver a la App",
   "manual_nav_getting_started": "Primeros Pasos",
   "manual_nav_settings": "Configuración",
