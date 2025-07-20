@@ -1,5 +1,6 @@
 ---
 name: "💡 Proponer una mejora"
+about: "Para proponer una nueva funcionalidad o una mejora."
 title: "[MEJORA] "
 labels: ["enhancement"]
 assignees: ''
