@@ -198,5 +198,6 @@
   "settings_tab_calendar": "Calendar",
   "settings_tab_schedule": "Schedule",
   "settings_tab_activities": "Activities & Students",
-  "settings_tab_data": "Data"
+  "settings_tab_data": "Data",
+  "footer_feedback": "Feedback & bugs"
 }
