@@ -110,6 +110,7 @@
   "privacy_p3": "<strong>Còpies de seguretat:</strong> Quan fas servir la funció \"Desa\", es genera un fitxer <code>.json</code> que es descarrega al teu ordinador. Aquest fitxer conté totes les teves dades i ets l'únic responsable de la seva custòdia. En fer servir \"Obre\", les dades d'aquest fitxer reemplacen les que estan desades al navegador.",
   "privacy_p4": "<strong>Dades de menors:</strong> L'aplicació pot contenir dades de menors (noms i anotacions). És la teva responsabilitat com a usuari/ària complir amb la normativa de protecció de dades vigent al teu país o regió respecte a la gestió d'aquesta informació.",
   "privacy_p5": "Les teves dades són teves, es queden al teu dispositiu i mai no en surten tret que tu decideixis exportar-les.",
+  "privacy_p6": "L'aplicació també fa servir un sistema propi d'estadístiques d'ús agregades per conèixer-ne la utilització. No s'envien les dades del diari, com ara horaris, alumnat, anotacions o còpies de seguretat.",
   "manual_back_to_app": "Torna a l'App",
   "manual_nav_getting_started": "Primers Passos",
   "manual_nav_settings": "Configuració",
@@ -199,5 +200,7 @@
   "settings_tab_schedule": "Horari",
   "settings_tab_activities": "Activitats i Alumnat",
   "settings_tab_data": "Dades",
+  "footer_analytics_visits": "Visites",
+  "footer_analytics_today": "Avui",
   "footer_feedback": "Suggeriments i errors"
 }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="analytics-endpoint" content="https://bilateria.org/app/estadistica/diario/track.php">
+    <meta name="analytics-site-id" content="diario">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Diario de clase (Local)</title>
     
@@ -106,6 +108,10 @@
             <footer class="fixed bottom-0 left-0 sm:left-56 right-0 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-2 text-center text-xs text-gray-500 dark:text-gray-400 no-print">
                 <span data-i18n-key="footer_made_by">Aplicación hecha por</span> <a href="https://bilateria.org" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Juan José de Haro</a> - 
                 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n-key="footer_license">Licencia Creative Commons BY-SA</a> -
+                <span data-analytics-summary hidden>
+                    <span data-i18n-key="footer_analytics_visits">Visitas</span> <strong data-analytics-total>-</strong> ·
+                    <span data-i18n-key="footer_analytics_today">Hoy</span> <strong data-analytics-today>-</strong> -
+                </span>
                 <button data-action="show-privacy-policy" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n-key="footer_privacy">Política de Privacidad</button> -
                 <a href="https://github.com/jjdeharo/diario/issues/new/choose" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n-key="footer_feedback">Sugerencias y errores</a>
             </footer>
@@ -133,6 +139,7 @@
     
     <div id="sidebar-overlay" class="sm:hidden fixed inset-0 bg-black bg-opacity-50 z-10 hidden"></div>
 
+    <script src="analytics.js" defer></script>
     <script type="module" src="main.js"></script>
 </body>
 </html>

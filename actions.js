@@ -651,6 +651,7 @@ export const actionHandlers = {
                 <p>${t('privacy_p3')}</p>
                 <p>${t('privacy_p4')}</p>
                 <p>${t('privacy_p5')}</p>
+                <p>${t('privacy_p6')}</p>
             </div>
         `;
         showInfoModal(title, content);
