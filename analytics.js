@@ -43,24 +43,6 @@
         }
     }
 
-    function updateSummary(payload) {
-        if (!payload || !payload.ok) {
-            return;
-        }
-
-        const summary = document.querySelector('[data-analytics-summary]');
-        const totalNode = document.querySelector('[data-analytics-total]');
-        const todayNode = document.querySelector('[data-analytics-today]');
-
-        if (!summary || !totalNode || !todayNode) {
-            return;
-        }
-
-        totalNode.textContent = String(payload.total);
-        todayNode.textContent = String(payload.today);
-        summary.hidden = false;
-    }
-
     function requestSummary(config) {
         const countVisit = shouldCountVisit(config.siteId);
         const callbackName = `diarioAnalyticsCallback_${Date.now()}_${Math.random().toString(36).slice(2)}`;
@@ -94,7 +76,6 @@
             if (countVisit) {
                 rememberVisit(config.siteId);
             }
-            updateSummary(payload);
             cleanup();
         };
 
@@ -111,10 +92,21 @@
             requestSummary(config);
         };
 
-        if (typeof window.requestIdleCallback === 'function') {
-            window.requestIdleCallback(run, { timeout: 2500 });
+        // Un <script async> inyectado antes de que se dispare «load» retrasa ese
+        // evento hasta que la peticion termina. Si el servidor de estadisticas se
+        // cuelga, «load» no llegaria a dispararse nunca. Por eso se espera siempre
+        // a «load» antes de programar nada.
+        const programar = function () {
+            if (typeof window.requestIdleCallback === 'function') {
+                window.requestIdleCallback(run, { timeout: 2500 });
+            } else {
+                window.setTimeout(run, 1200);
+            }
+        };
+        if (document.readyState === 'complete') {
+            programar();
         } else {
-            window.setTimeout(run, 1200);
+            window.addEventListener('load', programar, { once: true });
         }
     }
 
