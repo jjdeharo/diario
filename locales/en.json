@@ -110,7 +110,7 @@
   "privacy_p3": "<strong>Backups:</strong> When you use the \"Save\" feature, a <code>.json</code> file is generated and downloaded to your computer. This file contains all your data, and you are solely responsible for its safekeeping. When using \"Open\", the data from that file will replace the data currently stored in the browser.",
   "privacy_p4": "<strong>Data of Minors:</strong> The application may contain data of minors (names and annotations). It is your responsibility as a user to comply with the data protection regulations in force in your country or region regarding the management of this information.",
   "privacy_p5": "Your data is yours, it stays on your device, and it never leaves unless you decide to export it.",
-  "privacy_p6": "The application also uses its own aggregated usage statistics to understand how it is used. Diary data such as schedules, students, annotations, or backup files are not sent.",
+  "privacy_p6": "The application does not collect usage statistics and has no visit counter.",
   "manual_back_to_app": "Back to App",
   "manual_nav_getting_started": "Getting Started",
   "manual_nav_settings": "Settings",
@@ -200,7 +200,5 @@
   "settings_tab_schedule": "Schedule",
   "settings_tab_activities": "Activities & Students",
   "settings_tab_data": "Data",
-  "footer_analytics_visits": "Visits",
-  "footer_analytics_today": "Today",
   "footer_feedback": "Feedback & bugs"
 }
